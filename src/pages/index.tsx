@@ -1,30 +1,91 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+import styles from "@/styles/Home.module.css";
 
-function MyName(props: PropsWithChildren) {
+interface MainTitleProps {
+  title: string;
+}
+
+const MainTitle = ({ title }: MainTitleProps) => {
+  const arrName = Object.assign([], title.toUpperCase());
+  const alternatePosition = (index: number) => {
+    return index % 2 ? " mt-32 sm:mt-40 md:mt-16 lg:mt-20 xl:mt-46 " : "";
+  };
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <p className="text-9xl font-sans font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-fuchsia-500 textShadow-white">
-        {props.children}
+    <div className="w-full h-3/6 sm:h-4/6 flex justify-center">
+      <p
+        className={
+          styles.mainTitleFont +
+          " w-full flex justify-center sm:justify-center text-sizeable sm:text-giant lg:text-enormous xl:text-gargantua text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-fuchsia-500 "
+        }
+      >
+        {arrName.map((letter: string, index: number) => (
+          <span
+            className={
+              " -mx-4 md:mx-4 lg:mx-5 xl:mx-6" + alternatePosition(index)
+            }
+            key={Math.random()}
+          >
+            {letter}
+          </span>
+        ))}
       </p>
     </div>
   );
+};
+
+interface IntroductionProps {
+  text: string;
 }
+
+const Introduction = ({ text }: IntroductionProps) => {
+  const [index, setIndex] = useState(0);
+  const [textToDisplay, setTextToDisplay] = useState("");
+  useEffect(() => {
+    setTextToDisplay(text.slice(0, index));
+    setTimeout(() => {
+      setIndex(index + 1);
+    }, 35);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
+  return (
+    <div className="w-11/12 lg:w-4/6 h-2/6 flex items-end">
+      <p
+        className={
+          " font-mono text-base text-green-500 whitespace-pre-wrap drop-shadow-white "
+        }
+      >
+        {textToDisplay}
+        <span
+          className={
+            styles.caret +
+            " ml-1 " +
+            (text.length === textToDisplay.length ? styles.caretBlinking : "")
+          }
+        />
+      </p>
+    </div>
+  );
+};
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-4/5 h-full flex items-center justify-around text-3xl  text-white">
+    <div className="w-11/12 sm:w-4/5 h-1/6 flex items-center justify-around text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
       {props.children}
     </div>
   );
 }
 
 export default function Home() {
+  const introductionText = `> Ce site est en cours de construction, vous pourrez bientôt retrouver les sections suivantes :
+  - mes expériences professionnelles
+  - des articles sur le développement
+  - des articles sur mes activités en dehors du développement
+  - des informations à propos de ce site
+  - les moyens de me joindre`;
   return (
     <>
       <Head>
@@ -34,12 +95,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <MyName>EFLAMM</MyName>
+        <MainTitle title="Eflamm" />
+        <Introduction text={introductionText} />
         <Menu>
-          <Link href="#">Menu 1</Link>
-          <Link href="#">Menu 2</Link>
-          <Link href="#">Menu 3</Link>
-          <Link href="#">Menu 4</Link>
+          <Link href="/experiences">Expériences</Link>
+          <Link className="text-gray-400 cursor-not-allowed" href="#">
+            Articles
+          </Link>
+          <Link className="text-gray-400 cursor-not-allowed" href="#">
+            Blog
+          </Link>
+          <Link className="text-gray-400 cursor-not-allowed" href="#">
+            A propos
+          </Link>
         </Menu>
       </main>
     </>
