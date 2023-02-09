@@ -73,7 +73,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-1/6 flex items-center justify-around text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
+    <div className="w-11/12 sm:w-4/5 h-1/6 flex items-center justify-around font-mono text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
       {props.children}
     </div>
   );
@@ -98,7 +98,7 @@ export default function Home() {
         <MainTitle title="Eflamm" />
         <Introduction text={introductionText} />
         <Menu>
-          <Link href="/experiences">Expériences</Link>
+          <Link href="/api/resume">Expériences</Link>
           <Link className="text-gray-400 cursor-not-allowed" href="#">
             Articles
           </Link>
