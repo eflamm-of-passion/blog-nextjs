@@ -5,7 +5,6 @@ import ReactDOMServer from "react-dom/server";
 import fs from "fs";
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
-import { resumeData } from "../../res/resume-data";
 
 // TODO add a short section (soft skills)
 // TODO apprenticeship at Mosica about the CI/CD platform
@@ -17,6 +16,16 @@ export default async function handler(
   // res: NextApiResponse<string>
 ) {
   const browser: Browser = await puppeteer.launch({ headless: true });
+
+  type ResumeData = {
+    brief: string[];
+    contactDetails: ContactDetailsData;
+    languages: string[];
+    introduction: string;
+    experiences: ExperienceData[];
+    volunteering: ExperienceData[];
+    education: EducationData[];
+  };
 
   type ContactDetailsData = {
     firstName: string;
@@ -66,8 +75,12 @@ export default async function handler(
   });
 
   const imageData = fs
-    .readFileSync("src/res/profile-pic.png")
+    .readFileSync("public/data/profile-pic.png")
     .toString("base64");
+
+  const resumeData: ResumeData = JSON.parse(
+    fs.readFileSync("public/data/resume-data.json").toString()
+  );
 
   interface ProfilePicProps {
     imageData: string;
