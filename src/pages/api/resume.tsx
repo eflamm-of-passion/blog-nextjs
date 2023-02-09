@@ -12,8 +12,8 @@ import { PropsWithChildren, ReactNode } from "react";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Buffer>
-  // res: NextApiResponse<string>
+  // res: NextApiResponse<Buffer>
+  res: NextApiResponse<string>
 ) {
   const browser: Browser = await puppeteer.launch({ headless: true });
 
@@ -358,8 +358,8 @@ export default async function handler(
   await browser.close();
 
   // Serve the PDF document as a response
-  // res.setHeader("Content-Type", "text/html");
-  // res.send(html);
-  res.setHeader("Content-Type", "application/pdf");
-  res.send(pdf);
+  res.setHeader("Content-Type", "text/html");
+  res.send(html);
+  // res.setHeader("Content-Type", "application/pdf");
+  // res.send(pdf);
 }
