@@ -29,7 +29,6 @@ export default async function handler(
   });
 
   await page.setContent("hello world");
-  await page.waitForSelector("img");
   const pdf = await page.pdf({
     format: "a4",
     printBackground: true,
