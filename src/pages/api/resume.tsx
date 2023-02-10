@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import puppeteer, { Browser } from "puppeteer";
+import puppeteer, { Browser } from "puppeteer-core";
+import Chromium from "chrome-aws-lambda";
 import "react";
 import ReactDOMServer from "react-dom/server";
 import fs from "fs";
@@ -12,10 +13,17 @@ import { PropsWithChildren, ReactNode } from "react";
 
 export default async function handler(
   req: NextApiRequest,
-  // res: NextApiResponse<Buffer>
-  res: NextApiResponse<string>
+  res: NextApiResponse<Buffer>
+  // res: NextApiResponse<string>
 ) {
-  const browser: Browser = await puppeteer.launch({ headless: true });
+  const browserExecPath = await Chromium.executablePath;
+  // const browserExecPath = "/usr/bin/chromium";
+  const browser: Browser = await puppeteer.launch({
+    args: Chromium.args,
+    executablePath: browserExecPath,
+    defaultViewport: Chromium.defaultViewport,
+    headless: Chromium.headless,
+  });
 
   type ResumeData = {
     brief: string[];
@@ -79,7 +87,7 @@ export default async function handler(
     .toString("base64");
 
   const resumeData: ResumeData = JSON.parse(
-    fs.readFileSync("public/data/resume-data.json").toString()
+    fs.readFileSync("public/data/resume-data.json").toString("utf-8")
   );
 
   interface ProfilePicProps {
@@ -358,8 +366,8 @@ export default async function handler(
   await browser.close();
 
   // Serve the PDF document as a response
-  res.setHeader("Content-Type", "text/html");
-  res.send(html);
-  // res.setHeader("Content-Type", "application/pdf");
-  // res.send(pdf);
+  // res.setHeader("Content-Type", "text/html");
+  // res.send(html);
+  res.setHeader("Content-Type", "application/pdf");
+  res.send(pdf);
 }
