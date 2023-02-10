@@ -25,6 +25,14 @@ export default async function handler(
     headless: Chromium.headless,
   });
 
+  const imageData = fs
+    .readFileSync("public/data/profile-pic.png")
+    .toString("base64");
+
+  const resumeData: ResumeData = JSON.parse(
+    fs.readFileSync("public/data/resume-data.json").toString("utf-8")
+  );
+
   type ResumeData = {
     brief: string[];
     contactDetails: ContactDetailsData;
@@ -81,14 +89,6 @@ export default async function handler(
     isMobile: false,
     hasTouch: false,
   });
-
-  const imageData = fs
-    .readFileSync("src/res/profile-pic.png")
-    .toString("base64");
-
-  const resumeData: ResumeData = JSON.parse(
-    fs.readFileSync("src/res/resume-data.json").toString("utf-8")
-  );
 
   interface ProfilePicProps {
     imageData: string;
