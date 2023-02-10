@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import puppeteer, { Browser } from "puppeteer-core";
 import Chromium from "chrome-aws-lambda";
-import "react";
 
 // TODO add a short section (soft skills)
 // TODO apprenticeship at Mosica about the CI/CD platform
