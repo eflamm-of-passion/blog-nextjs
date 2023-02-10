@@ -83,11 +83,11 @@ export default async function handler(
   });
 
   const imageData = fs
-    .readFileSync("public/data/profile-pic.png")
+    .readFileSync("src/res/profile-pic.png")
     .toString("base64");
 
   const resumeData: ResumeData = JSON.parse(
-    fs.readFileSync("public/data/resume-data.json").toString("utf-8")
+    fs.readFileSync("src/res/resume-data.json").toString("utf-8")
   );
 
   interface ProfilePicProps {
