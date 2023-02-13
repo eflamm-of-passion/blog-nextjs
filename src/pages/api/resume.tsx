@@ -7,17 +7,19 @@ import fs from "fs";
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 
-// TODO add a short section (soft skills)
 // TODO apprenticeship at Mosica about the CI/CD platform
-// TODO enhance my description
+// TODO reajust space on page
+// TODO add company logos
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Buffer>
   // res: NextApiResponse<string>
 ) {
-  const browserExecPath = await Chromium.executablePath;
-  // const browserExecPath = "/usr/bin/chromium";
+  const browserExecPath =
+    process.env.NODE_ENV === "production"
+      ? await Chromium.executablePath
+      : process.env.BROWSER_PATH;
   const browser: Browser = await puppeteer.launch({
     args: Chromium.args,
     executablePath: browserExecPath,
@@ -26,12 +28,15 @@ export default async function handler(
   });
 
   const imageData = fs
-    .readFileSync("public/data/profile-pic.png")
+    .readFileSync("public/data/profile.jpg")
     .toString("base64");
 
   const resumeData: ResumeData = JSON.parse(
     fs.readFileSync("public/data/resume-data.json").toString("utf-8")
   );
+
+  const experiencesOnFirstPage = resumeData.experiences.slice(0, 3);
+  const experiencesOnSecondPage = resumeData.experiences.slice(3, 4);
 
   type ResumeData = {
     brief: string[];
@@ -51,6 +56,8 @@ export default async function handler(
     city: string;
     age: string;
     driverLicense: string;
+    linkedin: string;
+    github: string;
   };
 
   type ExperienceData = {
@@ -262,10 +269,6 @@ export default async function handler(
     );
   };
 
-  const Summary = () => {
-    return <div></div>;
-  };
-
   interface ContactDetailsProps {
     data: ContactDetailsData;
   }
@@ -276,11 +279,14 @@ export default async function handler(
     return (
       <>
         <h2>Contact</h2>
-        <p style={mailStyle}>{data.mail}</p>
-        <p>{data.phone}</p>
+        <p style={mailStyle}>{process.env.MY_MAIL_ADDRESS}</p>
+        <p>{process.env.MY_PHONE_NUMBER}</p>
         <p>{data.city}</p>
         <p>{data.age}</p>
         <p>{data.driverLicense}</p>
+        <br />
+        <p>{data.linkedin}</p>
+        <p>{data.github}</p>
       </>
     );
   };
@@ -292,7 +298,7 @@ export default async function handler(
     return <div style={globalStyle}>{children}</div>;
   };
 
-  const html = ReactDOMServer.renderToString(
+  const firstPageContent = ReactDOMServer.renderToString(
     <html>
       <body className="margin-0 padding-0">
         <style>
@@ -308,6 +314,7 @@ export default async function handler(
           p,li{font-size:3.5mm;letter-spacing:0.12mm;text-align:justify;line-height:4mm;}
           p{margin-top:0.5mm;margin-bottom:0.5mm;}
           
+          .breakPage{page-break-before: always;}
           .leftColumn{margin-top:12mm;padding-right:4mm;padding-left:4mm;color: white;}
           .leftColumn h2{width:75%;margin-top:10mm;margin-right:auto;margin-left:auto;margin-bottom:6mm;padding-bottom:2mm;padding-left:3mm;border-bottom:0.2mm solid white;}
           .leftColumn p{margin-top:2mm;margin-bottom:2mm;padding-left:1mm;letter-spacing:0.2mm;}
@@ -336,7 +343,11 @@ export default async function handler(
             <h2>A propos de moi</h2>
             <p>{resumeData.introduction}</p>
             <h2>Expériences</h2>
-            {resumeData.experiences.map((experience) => (
+            {experiencesOnFirstPage.map((experience) => (
+              <Experience key={Math.random()} data={experience} />
+            ))}
+            <div className="breakPage" />
+            {experiencesOnSecondPage.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
             <h2>Bénévolat</h2>
@@ -353,9 +364,7 @@ export default async function handler(
     </html>
   );
 
-  // console.log(html);
-
-  await page.setContent(html);
+  await page.setContent(firstPageContent);
   await page.waitForSelector("img");
   const pdf = await page.pdf({
     format: "a4",

@@ -14,10 +14,12 @@
       "phone": "tel.",
       "city": "Nantes",
       "age": "30 ans",
-      "driverLicense": "Permis B"
+      "driverLicense": "Permis B",
+      "linkedin": "linkedin.com/in/eflamm",
+      "github": "github.com/eflamm-of-passion"
     },
     "languages": ["Français", "Anglais"],
-    "introduction": "Bonjour, je suis Eflamm, un développeur full stack avec 5 ans d'expérience. Mon expertise est principalement en Java et en Javascript, et j'utilise souvent des frameworks populaires tels que React et Spring boot. Cependant, je suis toujours en train d'apprendre de nouvelles technologies et de nouvelles façons de développer.",
+    "introduction": "Je suis un développeur full stack expérimenté, possédant 5 ans d'expérience dans le développement d'applications web. Mon savoir-faire se concentre sur Java et Javascript, et j'utilise fréquemment les frameworks tels que React et Spring boot. Cependant, je suis toujours en quête de nouvelles technologies et méthodes pour améliorer mes compétences en développement.",
     "experiences": [
       {
         "title": "Développeur fullstack",
@@ -28,17 +30,15 @@
         "duration": "2 ans 6 mois",
         "description": {
           "summary":
-            "Au sein de l'équipe technique de Kiwatch, je participe au développement et à la maintenance de la solution de télésurveillance pour les particuliers et les pro, déployée en France et à l'international. Nous intervenons sur l'application à destination des clients, à travers laquelle ils peuvent interagir avec leur système d'alarme, composé de centrales d'alarmes, d'objets connectés et de caméras. Et nous intervenons aussi sur l'outil backoffice à destination de notre support, de nos commerciaux et ceux de nos partenaires qui fournissent notre solution.",
+            "En tant que membre de l'équipe technique de Kiwatch, je contribue au développement et à l'entretien de la solution de télésurveillance destinée aux particuliers et aux professionnels. Cette solution est utilisée en France et dans le monde entier. Nous développons une application pour les clients, qui leur permet de contrôler leur système d'alarme, composé de centrales d'alarme, d'objets connectés et de caméras.",
           "tasks": [
-            "j'analyse et je développe les fonctionnalités demandées par le métier ou pour les besoins techniques",
-            "je fais la revue du code produit par les membres de mon équipe",
-            "j'analyse et je corrige les bugs remontés par le support",
-            "je participe à la migration du SI vers un modèle plus résilient et proche des standards du marché",
-            "je forme les nouveaux arrivants sur le SI concernant les aspects fonctionnels et techniques",
-            "je récupère les besoins auprès du métier, et je l'approfondi ou je le précise si nécessaire",
-            "je me charge régulièrement de déployer les applications en production",
-            "j'effectue régulièrement des astreintes pour assurer la continuité du service",
-            "je teste et j'intègre de nouvelles centrales d'alarmes et objets connectés avec notre SI. Et je communique les problèmes rencontrés et les besoins à nos fournisseurs"
+            "analyser et développer les fonctionnalités demandées par le métier ou pour les besoins techniques",
+            "participer à la migration du SI vers un modèle plus résilient et proche des standards du marché",
+            "former les nouveaux arrivants sur le SI concernant les aspects fonctionnels et techniques",
+            "récupérer les besoins auprès du métier, et les approfondir ou les préciser si nécessaire",
+            "déployer les applications en production, investiguer et résoudre des incidents",
+            "effectuer régulièrement des astreintes pour assurer la continuité du service",
+            "tester et intégrer de nouvelles centrales d'alarmes et objets connectés avec notre SI. Et communiquer les problèmes rencontrés et les besoins à nos fournisseurs"
           ],
           "stack":
             "Environnement technique: Java, Guice, Javascript, React, JGroups, SQL, Linux, Eclipse, Tomcat, Jenkins, Sonarqube, centrale d'alarme, objets connectés, protocole SIA-CID"
@@ -53,7 +53,7 @@
         "duration": "3 mois",
         "description": {
           "summary":
-            "J'ai développé un site web pour la campagne de Nina Butin, qui est candidate à la présidence du comité d'Unicef de Paris et Seine Saint Denis. J'ai recueilli tous les besoins qu'elle avait, afin de produire un site web qui lui corresponde et qui présente toutes les informations relatives à la campagne.",
+            "J'ai créé un site web pour la campagne de Nassera Butin, candidate à la présidence du comité d'UNICEF de Paris et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne.",
           "tasks": [],
           "stack":
             "Environnement technique : HTML, CSS, Javascript, Ghost CMS, amCharts"
@@ -89,7 +89,7 @@
         "duration": "1 an 2 mois",
         "description": {
           "summary":
-            "En tant que développeur web j'ai eu l'opportunité d'intervenir sur plusieurs projets de la SMACL, pour lesquels j'ai développé des fonctionnalités, j'ai proposé des solutions, et j'ai contribué au travail en équipe.",
+            "En tant que développeur web, j'ai participé à plusieurs projets pour la SMACL en développant des fonctionnalités, en proposant des solutions, et en travaillant en équipe pour atteindre les objectifs du projet.",
           "tasks": [],
           "projects": [
             {
@@ -104,9 +104,9 @@
             },
             {
               "summary":
-                "J'ai contribué au développement d'une application de référentiel, permettant à une organisation de représenter sous forme d'arborescence les entités qui la compose, et de visualiser leurs contrats d'assurance. Les services qui y ont été développés sont consommés par d'autres applications de la SMACL.",
+                "En tant que développeur, j'ai participé au développement d'une application de référentiel pour une organisation. Cette application permet de visualiser les différentes entités qui composent l'organisation sous forme d'arborescence, ainsi que les contrats d'assurance associés. Les services développés dans cette application sont utilisés par d'autres applications au sein de la SMACL.",
               "tasks": [
-                "analyse le besoin, définir le schéma de données",
+                "analyser le besoin, définir le schéma de données",
                 "participer aux daily meetings, planifications de sprints et rétrospectives",
                 "développer les fonctionnalités rédigées dans les users stories",
                 "faire les démos de ce qui a été produit"
@@ -138,29 +138,29 @@
         "duration": "5 ans 5 mois",
         "description": {
           "summary":
-            "En tant que chef Scouts et Guides de France j'encadre une unité d'une vingtaine de jeunes de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
+            "En tant que chef des Scouts et Guides de France, j'ai la responsabilité de diriger une unité composée de 20 jeunes âgés de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
           "tasks": [
-            "Préparer et animer les activités",
-            "Gérer le budget alloué pour l'année",
-            "Organiser les sorties, week-ends campés et le camp d'été",
-            "Communiquer auprès des parents de la pédagogie SGDF et des évènements à venir",
-            "Accompagner les jeunes à dans leur prise de responsabilité, et la réalisation de leurs projets en unité",
-            "Définir les priorités pédagogiques en fonction du besoin des jeunes",
-            "Collaborer avec les chefs des autres groupes de la région",
-            "Soutenir le projet pédagogique proposé par les Scouts et Guides de France"
+            "préparer et animer les activités",
+            "gérer le budget alloué pour l'année",
+            "organiser les sorties, week-ends campés et le camp d'été",
+            "communiquer auprès des parents de la pédagogie SGDF et des évènements à venir",
+            "accompagner les jeunes à dans leur prise de responsabilité, et la réalisation de leurs projets en unité",
+            "définir les priorités pédagogiques en fonction du besoin des jeunes",
+            "collaborer avec les chefs des autres groupes de la région",
+            "soutenir le projet pédagogique proposé par les Scouts et Guides de France"
           ]
         }
       },
       {
-        "title": "Chef scout",
-        "company": "Scouts et Guides de France",
-        "location": "Nantes",
+        "title": "Chef de projet SI digital",
+        "company": "UNICEF Comité Paris Saint-Denis",
+        "location": "Paris",
         "startDate": "mars 2020",
         "endDate": "janv. 2021",
         "duration": "11 mois",
         "description": {
           "summary":
-            "Au sein du comité de Paris Saint Denis j'accompagne les bénévoles dans la mise en place et la maintenance d'outils de gestion et de communication digital. Au sein du bureau étendu je participe également à prise de décision des stratégies à mettre en place pour le comité.",
+            "En tant que membre du comité de Paris Saint Denis, j'ai soutenu les bénévoles en implémentant et en maintenant des solutions digitales de gestion et de communication. J'ai également pris part à l'élaboration des stratégies du comité en participant aux réunions du bureau élargi.",
           "tasks": []
         }
       }
