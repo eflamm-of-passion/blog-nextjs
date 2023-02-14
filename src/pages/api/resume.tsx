@@ -14,15 +14,13 @@ import {
   ProjectData,
   ResumeData,
 } from "@/types/resume.type";
-import {
-  Cake,
-  Call,
-  DirectionsCar,
-  GitHub,
-  LinkedIn,
-  Mail,
-  Place,
-} from "@mui/icons-material";
+import { CallIcon } from "@/components/icons/CallIcon";
+import { MailIcon } from "@/components/icons/MailIcon";
+import { LocationIcon } from "@/components/icons/LocationIcon";
+import { CakeIcon } from "@/components/icons/CakeIcon";
+import { CarIcon } from "@/components/icons/CarIcon";
+import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 export default async function handler(
   req: NextApiRequest,
@@ -275,8 +273,9 @@ export default async function handler(
     data: ContactDetailsData;
   }
   const ContactDetails = ({ data }: ContactDetailsProps) => {
-    const mailStyle: React.CSSProperties = {
-      letterSpacing: "0.05mm",
+    const linkStyle: React.CSSProperties = {
+      letterSpacing: "0.03mm",
+      fontSize: "3.2mm",
     };
     const contactDetailsLine: React.CSSProperties = {
       display: "flex",
@@ -286,34 +285,34 @@ export default async function handler(
       <>
         <h2>Contact</h2>
         <div style={contactDetailsLine}>
-          <Mail fontSize="small" />
-          <p style={mailStyle}>{process.env.MY_MAIL_ADDRESS}</p>
+          <MailIcon />
+          <p style={linkStyle}>{process.env.MY_MAIL_ADDRESS}</p>
         </div>
         <div style={contactDetailsLine}>
-          <Call />
+          <CallIcon />
           <p>{process.env.MY_PHONE_NUMBER}</p>
         </div>
         <div style={contactDetailsLine}>
-          <Place />
+          <LocationIcon />
           <p>{data.city}</p>
         </div>
         <div style={contactDetailsLine}>
-          <Cake />
+          <CakeIcon />
           <p>{data.age}</p>
         </div>
         <div style={contactDetailsLine}>
-          <DirectionsCar />
+          <CarIcon />
           <p>{data.driverLicense}</p>
         </div>
         <br />
         <br />
         <div style={contactDetailsLine}>
-          <LinkedIn />
-          <p>{data.linkedin}</p>
+          <LinkedinIcon />
+          <p style={linkStyle}>{data.linkedin}</p>
         </div>
         <div style={contactDetailsLine}>
-          <GitHub />
-          <p>{data.github}</p>
+          <GithubIcon />
+          <p style={linkStyle}>{data.github}</p>
         </div>
       </>
     );
