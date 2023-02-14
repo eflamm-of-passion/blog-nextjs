@@ -159,7 +159,7 @@ export default async function handler(
     const companyLogoImageData = data.companyLogo
       ? fs.readFileSync(data.companyLogo).toString("base64")
       : null;
-    const style = {
+    const containerStyle = {
       display: "flex",
       alignItems: "bottom",
       marginTop: "4mm",
@@ -185,7 +185,7 @@ export default async function handler(
     };
     return (
       <>
-        <div style={style}>
+        <div style={containerStyle}>
           {companyLogoImageData ? (
             <Image
               alt=""
@@ -332,7 +332,7 @@ export default async function handler(
   }
   const SectionTitle = ({ title, color, width }: SectionTitleProps) => {
     const textStyle: React.CSSProperties = {
-      marginTop: "5mm",
+      marginTop: "4mm",
       marginBottom: "-2.8mm",
       fontFamily: "sans",
       letterSpacing: "0.5mm",
