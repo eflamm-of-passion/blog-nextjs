@@ -14,10 +14,15 @@ import {
   ProjectData,
   ResumeData,
 } from "@/types/resume.type";
-
-// TODO add company logos
-// add icons
-// TODO add some colors
+import {
+  Cake,
+  Call,
+  DirectionsCar,
+  GitHub,
+  LinkedIn,
+  Mail,
+  Place,
+} from "@mui/icons-material";
 
 export default async function handler(
   req: NextApiRequest,
@@ -124,10 +129,10 @@ export default async function handler(
       textAlign: "center",
     };
     const firstNameStyle: React.CSSProperties = {
-      fontWeight: "300",
+      fontWeight: "400",
     };
     const lastNameStyle: React.CSSProperties = {
-      fontWeight: "500",
+      fontWeight: "600",
     };
     const underlineStyle: React.CSSProperties = {
       width: "80%",
@@ -135,7 +140,7 @@ export default async function handler(
       margin: "auto",
       marginBottom: "15mm",
       borderRadius: "5px",
-      backgroundColor: "yellow",
+      backgroundColor: "#FFEB0A",
     };
     return (
       <>
@@ -165,6 +170,7 @@ export default async function handler(
     const headerComponentStyle: React.CSSProperties = {
       display: "flex",
       flexDirection: "column",
+      justifyContent: "center",
       paddingLeft: "2mm",
       paddingTop: "1mm",
     };
@@ -270,19 +276,45 @@ export default async function handler(
   }
   const ContactDetails = ({ data }: ContactDetailsProps) => {
     const mailStyle: React.CSSProperties = {
-      letterSpacing: "0.1mm",
+      letterSpacing: "0.05mm",
+    };
+    const contactDetailsLine: React.CSSProperties = {
+      display: "flex",
+      alignItems: "center",
     };
     return (
       <>
         <h2>Contact</h2>
-        <p style={mailStyle}>{process.env.MY_MAIL_ADDRESS}</p>
-        <p>{process.env.MY_PHONE_NUMBER}</p>
-        <p>{data.city}</p>
-        <p>{data.age}</p>
-        <p>{data.driverLicense}</p>
+        <div style={contactDetailsLine}>
+          <Mail fontSize="small" />
+          <p style={mailStyle}>{process.env.MY_MAIL_ADDRESS}</p>
+        </div>
+        <div style={contactDetailsLine}>
+          <Call />
+          <p>{process.env.MY_PHONE_NUMBER}</p>
+        </div>
+        <div style={contactDetailsLine}>
+          <Place />
+          <p>{data.city}</p>
+        </div>
+        <div style={contactDetailsLine}>
+          <Cake />
+          <p>{data.age}</p>
+        </div>
+        <div style={contactDetailsLine}>
+          <DirectionsCar />
+          <p>{data.driverLicense}</p>
+        </div>
         <br />
-        <p>{data.linkedin}</p>
-        <p>{data.github}</p>
+        <br />
+        <div style={contactDetailsLine}>
+          <LinkedIn />
+          <p>{data.linkedin}</p>
+        </div>
+        <div style={contactDetailsLine}>
+          <GitHub />
+          <p>{data.github}</p>
+        </div>
       </>
     );
   };
@@ -292,6 +324,35 @@ export default async function handler(
       fontFamily: "sans-serif",
     };
     return <div style={globalStyle}>{children}</div>;
+  };
+
+  interface SectionTitleProps {
+    title: string;
+    color: string;
+    width: string;
+  }
+  const SectionTitle = ({ title, color, width }: SectionTitleProps) => {
+    const textStyle: React.CSSProperties = {
+      marginTop: "5mm",
+      marginBottom: "-2.8mm",
+      fontFamily: "sans",
+      letterSpacing: "0.5mm",
+    };
+    const underlineStyle: React.CSSProperties = {
+      width: `${width}`,
+      height: "3mm",
+      marginLeft: "-2mm",
+      borderRadius: "3px",
+      backgroundColor: `${color}`,
+    };
+    return (
+      <>
+        <h2 style={textStyle}>
+          <span>{title}</span>
+        </h2>
+        <div style={underlineStyle} />
+      </>
+    );
   };
 
   const firstPageContent = ReactDOMServer.renderToString(
@@ -305,12 +366,13 @@ export default async function handler(
           .padding-0 {padding: 0}
           h1,h2,h3,p,ul,li{margin:0}
           h1{font-size:12mm;letter-spacing:0}
-          h2{font-size:6mm;margin-top:5mm;font-weight:400;letter-spacing:0.5mm}
-          h3{font-size:4.5mm;font-weight:400;letter-spacing:0.3mm}
+          h2{font-size:6mm;margin-top:4.2mm;font-weight:400;letter-spacing:0.5mm}
+          h3{font-size:4mm;font-weight:400;letter-spacing:0.3mm}
           p,li{font-size:3.5mm;letter-spacing:0.12mm;text-align:justify;line-height:4mm;}
           p{margin-top:0.5mm;margin-bottom:0.5mm;}
           
           .breakPage{page-break-before: always;}
+          .secondPageMargin{height:2mm}
           .leftColumn{margin-top:12mm;padding-right:4mm;padding-left:4mm;color: white;}
           .leftColumn h2{width:75%;margin-top:10mm;margin-right:auto;margin-left:auto;margin-bottom:6mm;padding-bottom:2mm;padding-left:3mm;border-bottom:0.2mm solid white;}
           .leftColumn p{margin-top:2mm;margin-bottom:2mm;padding-left:1mm;letter-spacing:0.2mm;}
@@ -336,21 +398,26 @@ export default async function handler(
               firstName={resumeData.contactDetails.firstName}
               lastName={resumeData.contactDetails.lastName}
             />
-            <h2>A propos de moi</h2>
+            <SectionTitle
+              title="A propos de moi"
+              color="#FEB885"
+              width="57mm"
+            />
             <p>{resumeData.introduction}</p>
-            <h2>Expériences</h2>
+            <SectionTitle title="Expériences" color="#BDE411" width="42mm" />
             {experiencesOnFirstPage.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
             <div className="breakPage" />
+            <div className="secondPageMargin" />
             {experiencesOnSecondPage.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
-            <h2>Bénévolat</h2>
+            <SectionTitle title="Bénévolat" color="#02F25E" width="36mm" />
             {resumeData.volunteering.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
-            <h2>Formation</h2>
+            <SectionTitle title="Formation" color="#85D4FF" width="37mm" />
             {resumeData.education.map((education) => (
               <Education key={Math.random()} data={education} />
             ))}
