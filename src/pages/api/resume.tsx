@@ -6,10 +6,18 @@ import ReactDOMServer from "react-dom/server";
 import fs from "fs";
 import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
+import {
+  ContactDetailsData,
+  EducationData,
+  ExperienceData,
+  MissionData,
+  ProjectData,
+  ResumeData,
+} from "@/types/resume.type";
 
-// TODO apprenticeship at Mosica about the CI/CD platform
-// TODO reajust space on page
 // TODO add company logos
+// add icons
+// TODO add some colors
 
 export default async function handler(
   req: NextApiRequest,
@@ -27,7 +35,7 @@ export default async function handler(
     headless: Chromium.headless,
   });
 
-  const imageData = fs
+  const profilePictureImageData = fs
     .readFileSync("public/data/profile.jpg")
     .toString("base64");
 
@@ -37,57 +45,6 @@ export default async function handler(
 
   const experiencesOnFirstPage = resumeData.experiences.slice(0, 3);
   const experiencesOnSecondPage = resumeData.experiences.slice(3, 4);
-
-  type ResumeData = {
-    brief: string[];
-    contactDetails: ContactDetailsData;
-    languages: string[];
-    introduction: string;
-    experiences: ExperienceData[];
-    volunteering: ExperienceData[];
-    education: EducationData[];
-  };
-
-  type ContactDetailsData = {
-    firstName: string;
-    lastName: string;
-    mail: string;
-    phone: string;
-    city: string;
-    age: string;
-    driverLicense: string;
-    linkedin: string;
-    github: string;
-  };
-
-  type ExperienceData = {
-    title: string;
-    company: string;
-    location: string;
-    startDate: string;
-    endDate: string;
-    duration: string;
-    description: MissionData;
-  };
-
-  type MissionData = {
-    summary: string;
-    tasks: string[];
-    projects?: ProjectData[];
-    stack?: string;
-  };
-
-  type ProjectData = {
-    summary: string;
-    tasks: string[];
-  };
-
-  type EducationData = {
-    title: string;
-    institution: string;
-    startYear: string;
-    endYear: string;
-  };
 
   const page = await browser.newPage();
   await page.setViewport({
@@ -160,6 +117,7 @@ export default async function handler(
   }
   const Name = ({ firstName, lastName }: NameProps) => {
     const textStyle: React.CSSProperties = {
+      marginTop: "5mm",
       marginBottom: "-20px",
       fontFamily: "sans",
       letterSpacing: "0.5mm",
@@ -175,7 +133,7 @@ export default async function handler(
       width: "80%",
       height: "5mm",
       margin: "auto",
-      marginBottom: "5mm",
+      marginBottom: "15mm",
       borderRadius: "5px",
       backgroundColor: "yellow",
     };
@@ -195,18 +153,56 @@ export default async function handler(
     data: ExperienceData;
   }
   const Experience = ({ data }: ExperienceProps) => {
+    const companyLogoImageData = data.companyLogo
+      ? fs.readFileSync(data.companyLogo).toString("base64")
+      : null;
+    const style = {
+      display: "flex",
+      alignItems: "bottom",
+      marginTop: "4mm",
+      marginBottom: "2mm",
+    };
+    const headerComponentStyle: React.CSSProperties = {
+      display: "flex",
+      flexDirection: "column",
+      paddingLeft: "2mm",
+      paddingTop: "1mm",
+    };
+    const logoStyle: React.CSSProperties = {
+      minWidth: "11mm",
+      width: "11mm",
+      height: "11mm",
+      marginLeft: "-2mm",
+      borderRadius: "1px",
+    };
     const annotationStyle = {
       color: "grey",
       fontSize: "3.2mm",
     };
     return (
-      <div>
-        <h3>{data.title}</h3>
-        <p style={annotationStyle}>
-          {data.startDate} - {data.endDate} · {data.duration}, {data.location}
-        </p>
+      <>
+        <div style={style}>
+          {companyLogoImageData ? (
+            <Image
+              alt=""
+              width={0}
+              height={0}
+              style={logoStyle}
+              src={`data:image/png;base64,${companyLogoImageData}`}
+            />
+          ) : (
+            <div style={logoStyle} />
+          )}
+          <div style={headerComponentStyle}>
+            <h3>{data.title}</h3>
+            <p style={annotationStyle}>
+              {data.startDate} - {data.endDate} · {data.duration},{" "}
+              {data.location}
+            </p>
+          </div>
+        </div>
         <Mission data={data.description} />
-      </div>
+      </>
     );
   };
 
@@ -308,9 +304,9 @@ export default async function handler(
           .margin-0 {margin: 0}
           .padding-0 {padding: 0}
           h1,h2,h3,p,ul,li{margin:0}
-          h1{font-size:11mm;letter-spacing:0}
-          h2{font-size:6mm;margin-top:3mm;font-weight:400;letter-spacing:0.5mm}
-          h3{font-size:4.5mm;margin-top:2mm;padding-left: 2mm;font-weight:400;letter-spacing:0.3mm}
+          h1{font-size:12mm;letter-spacing:0}
+          h2{font-size:6mm;margin-top:5mm;font-weight:400;letter-spacing:0.5mm}
+          h3{font-size:4.5mm;font-weight:400;letter-spacing:0.3mm}
           p,li{font-size:3.5mm;letter-spacing:0.12mm;text-align:justify;line-height:4mm;}
           p{margin-top:0.5mm;margin-bottom:0.5mm;}
           
@@ -322,7 +318,7 @@ export default async function handler(
         </style>
         <Body>
           <LeftColumn>
-            <ProfilePic imageData={imageData} />
+            <ProfilePic imageData={profilePictureImageData} />
             <div className="leftColumn">
               <ContactDetails data={resumeData.contactDetails} />
               <h2>Langues</h2>

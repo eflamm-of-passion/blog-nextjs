@@ -24,6 +24,7 @@
       {
         "title": "Développeur fullstack",
         "company": "Kiwatch",
+        "companyLogo": "public/data/logo-kiwatch.jpg",
         "location": "Nantes",
         "startDate": "sept. 2020",
         "endDate": "aujourd'hui",
@@ -47,6 +48,7 @@
       {
         "title": "Développeur web",
         "company": "UNICEF Comité Paris Saint-Denis",
+        "companyLogo": "public/data/logo-unicef.jpg",
         "location": "",
         "startDate": "janv. 2020",
         "endDate": "mars 2020",
@@ -62,6 +64,7 @@
       {
         "title": "Développeur web",
         "company": "Maisons du Monde",
+        "companyLogo": "public/data/logo-mdm.jpg",
         "location": "Nantes",
         "startDate": "juil. 2019",
         "endDate": "oct. 2019",
@@ -83,6 +86,7 @@
       {
         "title": "Ingénieur d'études",
         "company": "Smacl Assurances",
+        "companyLogo": "public/data/logo-smacl.jpg",
         "location": "Niort",
         "startDate": "janv. 2018",
         "endDate": "févr. 2019",
@@ -132,6 +136,7 @@
       {
         "title": "Chef scout",
         "company": "Scouts et Guides de France",
+        "companyLogo": "public/data/logo-sgdf.jpg",
         "location": "Nantes",
         "startDate": "oct. 2017",
         "endDate": "aujourd'hui",
@@ -154,6 +159,7 @@
       {
         "title": "Chef de projet SI digital",
         "company": "UNICEF Comité Paris Saint-Denis",
+        "companyLogo": "public/data/logo-unicef.jpg",
         "location": "Paris",
         "startDate": "mars 2020",
         "endDate": "janv. 2021",

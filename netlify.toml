@@ -21,4 +21,12 @@
   ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [functions]
-  included_files = ["public/data/profile.jpg", "public/data/resume-data.json"]
+  included_files = [
+    "public/data/profile.jpg", 
+    "public/data/resume-data.json", 
+    "public/data/logo-kiwatch.jpg",
+    "public/data/logo-mdm.jpg",
+    "public/data/logo-sgdf.jpg",
+    "public/data/logo-unicef.jpg",
+    "public/data/logo-smacl.jpg",
+  ]
