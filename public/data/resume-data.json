@@ -16,10 +16,11 @@
       "age": "30 ans",
       "driverLicense": "Permis B",
       "linkedin": "linkedin.com/in/eflamm",
-      "github": "github.com/eflamm-of-passion"
+      "github": "github.com/eflamm-of-passion",
+      "blog": "eflamm.net"
     },
     "languages": ["Français", "Anglais"],
-    "introduction": "Je suis un développeur full stack expérimenté, possédant 5 ans d'expérience dans le développement d'applications web. Mon savoir-faire se concentre sur Java et Javascript, et j'utilise fréquemment les frameworks tels que React et Spring boot. Cependant, je suis toujours en quête de nouvelles technologies et méthodes pour améliorer mes compétences en développement.",
+    "introduction": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
     "experiences": [
       {
         "title": "Développeur fullstack",
@@ -31,15 +32,15 @@
         "duration": "2 ans 6 mois",
         "description": {
           "summary":
-            "En tant que membre de l'équipe technique de Kiwatch, je contribue au développement et à l'entretien de la solution de télésurveillance destinée aux particuliers et aux professionnels. Cette solution est utilisée en France et dans le monde entier. Nous développons une application pour les clients, qui leur permet de contrôler leur système d'alarme, composé de centrales d'alarme, d'objets connectés et de caméras.",
+            "Chez Kiwatch, je développe et maintiens la solution de télésurveillance pour les particuliers et professionnels, utilisée en France et d'autres pays. J'ai participé au développement d'une application pour les clients pour leur permettre de contrôler leur système d'alarme, comprenant des centrales, objets connectés et caméras.",
           "tasks": [
-            "analyser et développer les fonctionnalités demandées par le métier ou pour les besoins techniques",
-            "participer à la migration du SI vers un modèle plus résilient et proche des standards du marché",
+            "analyser et développer les fonctionnalités demandées",
+            "mettre à jour le système d'information vers un modèle plus fiable et conforme aux normes du marché.",
             "former les nouveaux arrivants sur le SI concernant les aspects fonctionnels et techniques",
-            "récupérer les besoins auprès du métier, et les approfondir ou les préciser si nécessaire",
+            "communiquer avec le métier afin de cerner le besoin",
             "déployer les applications en production, investiguer et résoudre des incidents",
             "effectuer régulièrement des astreintes pour assurer la continuité du service",
-            "tester et intégrer de nouvelles centrales d'alarmes et objets connectés avec notre SI. Et communiquer les problèmes rencontrés et les besoins à nos fournisseurs"
+            "tester et intégrer les nouveaux équipements avec notre SI, échanger avec le fournisseur à propos des problèmes rencontrés"
           ],
           "stack":
             "Environnement technique: Java, Guice, Javascript, React, JGroups, SQL, Linux, Eclipse, Tomcat, Jenkins, Sonarqube, centrale d'alarme, objets connectés, protocole SIA-CID"
@@ -55,7 +56,7 @@
         "duration": "3 mois",
         "description": {
           "summary":
-            "J'ai créé un site web pour la campagne de Nassera Butin, candidate à la présidence du comité d'UNICEF de Paris et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne.",
+            "J'ai créé un site web pour la campagne de Nassera Butin, qui a été élue présidente du comité d'UNICEF de Paris et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne. ",
           "tasks": [],
           "stack":
             "Environnement technique : HTML, CSS, Javascript, Ghost CMS, amCharts"
@@ -75,7 +76,7 @@
           "tasks": [
             "développer l'application front et l'API, dans le cadre de la refonte",
             "analyser le code existant pour résoudre les bugs et le rendre plus maintenable",
-            "intégrer les nouveaux types de flux génériques pour les transporteurs",
+            "intégrer les nouveaux types de flux de données pour les transporteurs",
             "résoudre les tickets de support N3",
             "mettre à jour la documentation d'exploitation et les procédures"
           ],
@@ -93,12 +94,12 @@
         "duration": "1 an 2 mois",
         "description": {
           "summary":
-            "En tant que développeur web, j'ai participé à plusieurs projets pour la SMACL en développant des fonctionnalités, en proposant des solutions, et en travaillant en équipe pour atteindre les objectifs du projet.",
+            "A la SMACL j'ai participé à plusieurs projets en développant des fonctionnalités, en proposant des solutions, et en travaillant en équipe pour atteindre les objectifs de chaque projet.",
           "tasks": [],
           "projects": [
             {
               "summary":
-                "J'ai participé au développement du site de recrutement Smacl Recrute, à destination des candidats externes souhaitant postuler pour un emploi, une alternance, un stage, ou bien simplement prendre contact.",
+                "J'ai participé au développement du site de recrutement Smacl Recrute à destination des candidats.",
               "tasks": [
                 "développer les fonctionnalités exigées, en front-end et back-end",
                 "communiquer avec le métier afin de cerner le besoin",
@@ -108,22 +109,22 @@
             },
             {
               "summary":
-                "En tant que développeur, j'ai participé au développement d'une application de référentiel pour une organisation. Cette application permet de visualiser les différentes entités qui composent l'organisation sous forme d'arborescence, ainsi que les contrats d'assurance associés. Les services développés dans cette application sont utilisés par d'autres applications au sein de la SMACL.",
+                "J'ai développé une application de référentiel pour une organisation, qui affiche ses entités et contrats d'assurance sous forme d'arborescence. Les services développés sont consommés par d'autres applications de la SMACL.",
               "tasks": [
                 "analyser le besoin, définir le schéma de données",
-                "participer aux daily meetings, planifications de sprints et rétrospectives",
+                "participer aux daily meetings, aux sprints plannings et rétrospectives",
                 "développer les fonctionnalités rédigées dans les users stories",
                 "faire les démos de ce qui a été produit"
               ]
             },
             {
               "summary":
-                "J'ai également pris part à la maintenance du portail interne, qui recense l'ensemble des liens des applications accessibles par les employés. J'ai été activement en contact avec le service communication lors de mes interventions sur le portail.",
+                "J'ai maintenu le portail interne répertoriant les liens d'applications accessibles aux employés, en collaboration avec le service communication.",
               "tasks": [
                 "ajouter ou modifier les liens accessibles du portail",
                 "préparer la livraison des nouvelles versions du portail",
                 "intégrer un quiz de bonne conduite en entreprise",
-                "dialoguer avec les différents interlocuteurs souhaitant obtenir des modifications sur le portail, d'appréhender et affiner leurs besoins"
+                "dialoguer avec les différents interlocuteurs pour appréhender leurs besoins"
               ]
             }
           ],
@@ -148,7 +149,7 @@
             "préparer et animer les activités",
             "gérer le budget alloué pour l'année",
             "organiser les sorties, week-ends campés et le camp d'été",
-            "communiquer auprès des parents de la pédagogie SGDF et des évènements à venir",
+            "communiquer auprès des parents de notre pédagogie et des évènements à venir",
             "accompagner les jeunes à dans leur prise de responsabilité, et la réalisation de leurs projets en unité",
             "définir les priorités pédagogiques en fonction du besoin des jeunes",
             "collaborer avec les chefs des autres groupes de la région",
@@ -166,7 +167,7 @@
         "duration": "11 mois",
         "description": {
           "summary":
-            "En tant que membre du comité de Paris Saint Denis, j'ai soutenu les bénévoles en implémentant et en maintenant des solutions digitales de gestion et de communication. J'ai également pris part à l'élaboration des stratégies du comité en participant aux réunions du bureau élargi.",
+            "J'ai aidé le comité de Paris Saint-Denis en mettant en place des outils de gestion et de communication digitale pour les bénévoles, et j'ai contribué aux décisions stratégiques en participant aux réunions du bureau élargi.",
           "tasks": []
         }
       }

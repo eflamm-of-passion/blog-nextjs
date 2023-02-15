@@ -21,6 +21,9 @@ import { CakeIcon } from "@/components/icons/CakeIcon";
 import { CarIcon } from "@/components/icons/CarIcon";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
+import { WebsiteIcon } from "@/components/icons/WebsiteIcon";
+
+// TODO use the variables from Netlify to set the mail and phone
 
 export default async function handler(
   req: NextApiRequest,
@@ -62,22 +65,25 @@ export default async function handler(
   }
 
   const ProfilePic = ({ imageData }: ProfilePicProps) => {
-    const style: React.CSSProperties = {
+    const containerStyle: React.CSSProperties = {
+      display: "flex",
+      justifyContent: "center",
+    };
+    const imageStyle: React.CSSProperties = {
       width: "4cm",
       height: "4cm",
-      marginTop: "0.5cm",
-      marginLeft: "0.5cm",
+      marginTop: "1cm",
       padding: "0.2cm",
       borderRadius: "1000px",
       backgroundColor: "orange",
     };
     return (
-      <div>
+      <div style={containerStyle}>
         <Image
           alt=""
           width={0}
           height={0}
-          style={style}
+          style={imageStyle}
           src={`data:image/png;base64,${imageData}`}
         />
       </div>
@@ -314,6 +320,10 @@ export default async function handler(
           <GithubIcon />
           <p style={linkStyle}>{data.github}</p>
         </div>
+        <div style={contactDetailsLine}>
+          <WebsiteIcon />
+          <p style={linkStyle}>{data.blog}</p>
+        </div>
       </>
     );
   };
@@ -370,9 +380,10 @@ export default async function handler(
           p,li{font-size:3.5mm;letter-spacing:0.12mm;text-align:justify;line-height:4mm;}
           p{margin-top:0.5mm;margin-bottom:0.5mm;}
           
+          .introduction{margin-top:4mm}
           .breakPage{page-break-before: always;}
           .secondPageMargin{height:2mm}
-          .leftColumn{margin-top:12mm;padding-right:4mm;padding-left:4mm;color: white;}
+          .leftColumn{margin-top:6mm;padding-right:4mm;padding-left:4mm;color: white;}
           .leftColumn h2{width:75%;margin-top:10mm;margin-right:auto;margin-left:auto;margin-bottom:6mm;padding-bottom:2mm;padding-left:3mm;border-bottom:0.2mm solid white;}
           .leftColumn p{margin-top:2mm;margin-bottom:2mm;padding-left:1mm;letter-spacing:0.2mm;}
           `}
@@ -400,10 +411,10 @@ export default async function handler(
             <SectionTitle
               title="A propos de moi"
               color="#FEB885"
-              width="57mm"
+              width="57.5mm"
             />
-            <p>{resumeData.introduction}</p>
-            <SectionTitle title="Expériences" color="#BDE411" width="42mm" />
+            <p className="introduction">{resumeData.introduction}</p>
+            <SectionTitle title="Expériences" color="#BDE411" width="43mm" />
             {experiencesOnFirstPage.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
@@ -412,11 +423,11 @@ export default async function handler(
             {experiencesOnSecondPage.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
-            <SectionTitle title="Bénévolat" color="#02F25E" width="36mm" />
+            <SectionTitle title="Bénévolat" color="#02F25E" width="36.5mm" />
             {resumeData.volunteering.map((experience) => (
               <Experience key={Math.random()} data={experience} />
             ))}
-            <SectionTitle title="Formation" color="#85D4FF" width="37mm" />
+            <SectionTitle title="Formation" color="#85D4FF" width="37.5mm" />
             {resumeData.education.map((education) => (
               <Education key={Math.random()} data={education} />
             ))}

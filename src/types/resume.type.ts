@@ -18,6 +18,7 @@ export type ContactDetailsData = {
   driverLicense: string;
   linkedin: string;
   github: string;
+  blog: string;
 };
 
 export type ExperienceData = {
