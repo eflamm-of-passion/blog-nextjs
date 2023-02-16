@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    BROWSER_PATH:"/usr/bin/chromium",
-    MY_MAIL_ADDRESS: "some.example@mail.com",
-    MY_PHONE_NUMBER: "06 00 00 00 00"
+    BROWSER_PATH: process.env.BROWSER_PATH,
+    MY_MAIL_ADDRESS: process.env.MY_MAIL_ADDRESS,
+    MY_PHONE_NUMBER: process.env.MY_PHONE_NUMBER
   }
 }
 
