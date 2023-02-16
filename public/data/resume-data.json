@@ -32,14 +32,14 @@
         "duration": "2 ans 6 mois",
         "description": {
           "summary":
-            "Chez Kiwatch, je développe et maintiens la solution de télésurveillance pour les particuliers et professionnels, utilisée en France et d'autres pays. J'ai participé au développement d'une application pour les clients pour leur permettre de contrôler leur système d'alarme, comprenant des centrales, objets connectés et caméras.",
+            "Chez Kiwatch, je développe et maintiens la solution de télésurveillance pour les particuliers et professionnels, utilisée en France et d'autres pays. J'ai participé au développement d'une application pour les clients pour leur permettre de contrôler leur système d'alarme, comprenant des centrales, des objets connectés et des caméras.",
           "tasks": [
             "analyser et développer les fonctionnalités demandées",
-            "mettre à jour le système d'information vers un modèle plus fiable et conforme aux normes du marché.",
-            "former les nouveaux arrivants sur le SI concernant les aspects fonctionnels et techniques",
+            "mettre à jour le système d'information vers un modèle plus fiable et conforme aux standards du marché (e.g. migration de Java 8 vers Java 11)",
+            "former les nouveaux arrivants sur les aspects fonctionnels et techniques du SI",
             "communiquer avec le métier afin de cerner le besoin",
             "déployer les applications en production, investiguer et résoudre des incidents",
-            "effectuer régulièrement des astreintes pour assurer la continuité du service",
+            "effectuer des astreintes pour assurer la continuité du service",
             "tester et intégrer les nouveaux équipements avec notre SI, échanger avec le fournisseur à propos des problèmes rencontrés"
           ],
           "stack":
@@ -56,7 +56,7 @@
         "duration": "3 mois",
         "description": {
           "summary":
-            "J'ai créé un site web pour la campagne de Nassera Butin, qui a été élue présidente du comité d'UNICEF de Paris et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne. ",
+            "J'ai créé un site web pour la campagne de Nassera Butin, qui a été élue présidente du comité d'UNICEF de Paris en 2020 et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne. ",
           "tasks": [],
           "stack":
             "Environnement technique : HTML, CSS, Javascript, Ghost CMS, amCharts"
@@ -72,7 +72,7 @@
         "duration": "5 mois",
         "description": {
           "summary":
-            "Au sein du pôle Supply Chain Aval de la DSI, j'ai participé au maintien et à la refonte des outils de suivi à destination du service Transport de Maisons du Monde. Je suis également intervenu de manière ponctuelle sur le support de niveau 3, principalement pour résoudre les problèmes d'intégration de flux entre les transporteurs tiers et Maisons du Monde.",
+            "Au sein du pôle Supply Chain Aval de la DSI, j'ai participé au maintien et à la refonte des outils de suivi du service Transport de Maisons du Monde. Je suis également intervenu de manière ponctuelle sur le support de niveau 3, principalement pour résoudre les problèmes d'intégration de flux entre les transporteurs tiers et Maisons du Monde.",
           "tasks": [
             "développer l'application front et l'API, dans le cadre de la refonte",
             "analyser le code existant pour résoudre les bugs et le rendre plus maintenable",
@@ -112,19 +112,8 @@
                 "J'ai développé une application de référentiel pour une organisation, qui affiche ses entités et contrats d'assurance sous forme d'arborescence. Les services développés sont consommés par d'autres applications de la SMACL.",
               "tasks": [
                 "analyser le besoin, définir le schéma de données",
-                "participer aux daily meetings, aux sprints plannings et rétrospectives",
                 "développer les fonctionnalités rédigées dans les users stories",
-                "faire les démos de ce qui a été produit"
-              ]
-            },
-            {
-              "summary":
-                "J'ai maintenu le portail interne répertoriant les liens d'applications accessibles aux employés, en collaboration avec le service communication.",
-              "tasks": [
-                "ajouter ou modifier les liens accessibles du portail",
-                "préparer la livraison des nouvelles versions du portail",
-                "intégrer un quiz de bonne conduite en entreprise",
-                "dialoguer avec les différents interlocuteurs pour appréhender leurs besoins"
+                "présenter les démos de ce qui a été produit"
               ]
             }
           ],
@@ -144,7 +133,7 @@
         "duration": "5 ans 5 mois",
         "description": {
           "summary":
-            "En tant que chef des Scouts et Guides de France, j'ai la responsabilité de diriger une unité composée de 20 jeunes âgés de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
+            "En tant que chef des Scouts et Guides de France, j'ai la responsabilité de diriger une unité composée d'une vingtaine de jeunes âgés de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
           "tasks": [
             "préparer et animer les activités",
             "gérer le budget alloué pour l'année",

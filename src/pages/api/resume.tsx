@@ -168,7 +168,7 @@ export default async function handler(
     const containerStyle = {
       display: "flex",
       alignItems: "bottom",
-      marginTop: "4mm",
+      marginTop: "7mm",
       marginBottom: "2mm",
     };
     const headerComponentStyle: React.CSSProperties = {
@@ -261,12 +261,15 @@ export default async function handler(
     data: EducationData;
   }
   const Education = ({ data }: EducationProps) => {
+    const containerStyle = {
+      marginTop: "3mm",
+    };
     const annotationStyle = {
       color: "grey",
       fontSize: "3.2mm",
     };
     return (
-      <div>
+      <div style={containerStyle}>
         <h3>{data.title}</h3>
         <p style={annotationStyle}>
           {data.startYear} - {data.endYear}, {data.institution}
@@ -341,6 +344,9 @@ export default async function handler(
     width: string;
   }
   const SectionTitle = ({ title, color, width }: SectionTitleProps) => {
+    const containerStyle = {
+      marginTop: "5mm",
+    };
     const textStyle: React.CSSProperties = {
       marginTop: "4mm",
       marginBottom: "-2.8mm",
@@ -355,12 +361,12 @@ export default async function handler(
       backgroundColor: `${color}`,
     };
     return (
-      <>
+      <div style={containerStyle}>
         <h2 style={textStyle}>
           <span>{title}</span>
         </h2>
         <div style={underlineStyle} />
-      </>
+      </div>
     );
   };
 
