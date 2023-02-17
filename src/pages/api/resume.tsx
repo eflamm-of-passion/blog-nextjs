@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import puppeteer, { Browser } from "puppeteer-core";
-import Chromium from "chrome-aws-lambda";
+import Chromium from "@sparticuz/chrome-aws-lambda";
 import "react";
 import ReactDOMServer from "react-dom/server";
 import fs from "fs";
@@ -10,6 +10,7 @@ import {
   ContactDetailsData,
   EducationData,
   ExperienceData,
+  Language,
   MissionData,
   ProjectData,
   ResumeData,
@@ -23,12 +24,9 @@ import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { WebsiteIcon } from "@/components/icons/WebsiteIcon";
 
-// TODO use the variables from Netlify to set the mail and phone
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Buffer>
-  // res: NextApiResponse<string>
 ) {
   const browserExecPath =
     process.env.NODE_ENV === "production"
@@ -40,10 +38,6 @@ export default async function handler(
     defaultViewport: Chromium.defaultViewport,
     headless: Chromium.headless,
   });
-
-  const profilePictureImageData = fs
-    .readFileSync("public/data/profile.jpg")
-    .toString("base64");
 
   const resumeData: ResumeData = JSON.parse(
     fs.readFileSync("public/data/resume-data.json").toString("utf-8")
@@ -60,11 +54,10 @@ export default async function handler(
     hasTouch: false,
   });
 
-  interface ProfilePicProps {
-    imageData: string;
-  }
-
-  const ProfilePic = ({ imageData }: ProfilePicProps) => {
+  const ProfilePic = () => {
+    const profilePictureImageData = fs
+      .readFileSync("public/data/profile.jpg")
+      .toString("base64");
     const containerStyle: React.CSSProperties = {
       display: "flex",
       justifyContent: "center",
@@ -84,7 +77,7 @@ export default async function handler(
           width={0}
           height={0}
           style={imageStyle}
-          src={`data:image/png;base64,${imageData}`}
+          src={`data:image/png;base64,${profilePictureImageData}`}
         />
       </div>
     );
@@ -331,6 +324,29 @@ export default async function handler(
     );
   };
 
+  interface LanguagesProps {
+    languages: Language[];
+  }
+  const Languages = ({ languages }: LanguagesProps) => {
+    const lineStyle: React.CSSProperties = {
+      width: "100%",
+    };
+    const wordStyle: React.CSSProperties = {
+      display: "inline-block",
+      width: "40%",
+    };
+    return (
+      <>
+        {languages.map((language) => (
+          <p style={lineStyle} key={Math.random()}>
+            <span style={wordStyle}>{language.language}:</span>
+            <span>{language.level}</span>
+          </p>
+        ))}
+      </>
+    );
+  };
+
   const Body = ({ children }: PropsWithChildren) => {
     const globalStyle = {
       fontFamily: "sans-serif",
@@ -396,13 +412,11 @@ export default async function handler(
         </style>
         <Body>
           <LeftColumn>
-            <ProfilePic imageData={profilePictureImageData} />
+            <ProfilePic />
             <div className="leftColumn">
               <ContactDetails data={resumeData.contactDetails} />
               <h2>Langues</h2>
-              {resumeData.languages.map((language) => (
-                <p key={Math.random()}>{language}</p>
-              ))}
+              <Languages languages={resumeData.languages} />
               <h2>En bref</h2>
               {resumeData.brief.map((word) => (
                 <p key={Math.random()}>{word}</p>
@@ -453,9 +467,6 @@ export default async function handler(
 
   await browser.close();
 
-  // Serve the PDF document as a response
-  // res.setHeader("Content-Type", "text/html");
-  // res.send(html);
   res.setHeader("Content-Type", "application/pdf");
   res.send(pdf);
 }

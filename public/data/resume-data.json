@@ -19,7 +19,16 @@
       "github": "github.com/eflamm-of-passion",
       "blog": "eflamm.net"
     },
-    "languages": ["Français", "Anglais"],
+    "languages": [
+      {
+        "language": "Français",
+        "level": "niveau C2"
+      },
+      {
+        "language": "Anglais",
+        "level": "niveau C1"
+      } 
+    ],
     "introduction": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
     "experiences": [
       {

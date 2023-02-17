@@ -1,7 +1,7 @@
 export type ResumeData = {
   brief: string[];
   contactDetails: ContactDetailsData;
-  languages: string[];
+  languages: Language[];
   introduction: string;
   experiences: ExperienceData[];
   volunteering: ExperienceData[];
@@ -49,4 +49,9 @@ export type EducationData = {
   institution: string;
   startYear: string;
   endYear: string;
+};
+
+export type Language = {
+  language: string;
+  level: string;
 };
