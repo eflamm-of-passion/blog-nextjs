@@ -3,6 +3,7 @@ import { PropsWithChildren, useEffect, useState } from "react";
 import Link from "next/link";
 
 import styles from "@/styles/Home.module.css";
+import Page from "@/components/Page";
 
 interface MainTitleProps {
   title: string;
@@ -11,20 +12,20 @@ interface MainTitleProps {
 const MainTitle = ({ title }: MainTitleProps) => {
   const arrName = Object.assign([], title.toUpperCase());
   const alternatePosition = (index: number) => {
-    return index % 2 ? " mt-32 sm:mt-40 md:mt-16 lg:mt-20 xl:mt-46 " : "";
+    return index % 2 ? " mt-16 sm:mt-40 md:mt-16 lg:mt-20 xl:mt-46 " : "";
   };
   return (
-    <div className="w-full h-3/6 sm:h-4/6 flex justify-center">
+    <div className="w-full h-1/6 sm:h-4/6 ">
       <p
         className={
           styles.mainTitleFont +
-          " w-full flex justify-center sm:justify-center text-sizeable sm:text-giant lg:text-enormous xl:text-gargantua text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-fuchsia-500 "
+          " w-full flex justify-center items-center text-sizeable lg:text-enormous xl:text-gargantua text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient "
         }
       >
         {arrName.map((letter: string, index: number) => (
           <span
             className={
-              " -mx-4 md:mx-4 lg:mx-5 xl:mx-6" + alternatePosition(index)
+              " -mx-0 md:mx-4 lg:mx-5 xl:mx-6" + alternatePosition(index)
             }
             key={Math.random()}
           >
@@ -47,15 +48,15 @@ const Introduction = ({ text }: IntroductionProps) => {
     setTextToDisplay(text.slice(0, index));
     setTimeout(() => {
       setIndex(index + 1);
-    }, 35);
+    }, 33);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   return (
-    <div className="w-11/12 lg:w-4/6 h-2/6 flex items-end">
+    <div className="w-11/12 lg:w-4/6 h-1/6 flex items-start">
       <p
         className={
-          " font-mono text-base text-green-500 whitespace-pre-wrap drop-shadow-white "
+          "font-mono text-sm sm:text-base text-secondary whitespace-pre-wrap drop-shadow-white "
         }
       >
         {textToDisplay}
@@ -73,7 +74,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-1/6 flex items-center justify-around font-mono text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
+    <div className="w-11/12 sm:w-4/5 h-2/6 sm:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
       {props.children}
     </div>
   );
@@ -94,22 +95,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <Page>
         <MainTitle title="Eflamm" />
         <Introduction text={introductionText} />
         <Menu>
-          <Link href="/api/resume">Expériences</Link>
-          <Link className="text-gray-400 cursor-not-allowed" href="#">
+          <Link href="/experiences">Expériences</Link>
+          <Link className="text-disabled cursor-not-allowed" href="#">
             Articles
           </Link>
-          <Link className="text-gray-400 cursor-not-allowed" href="#">
+          <Link className="text-disabled cursor-not-allowed" href="#">
             Blog
           </Link>
-          <Link className="text-gray-400 cursor-not-allowed" href="#">
+          <Link className="text-disabled cursor-not-allowed" href="#">
             A propos
           </Link>
         </Menu>
-      </main>
+      </Page>
     </>
   );
 }

@@ -5,18 +5,32 @@ module.exports = {
     ],
     theme: {
       extend: {
+        // https://coolors.co/000000-000c0e-fde047-d946ef-eaf47c
         fontSize: {
-          'sizeable': '12rem',
+          'sizeable': '7.5rem',
           'giant': '14rem',
           'enormous': '17rem',
           'gargantua': '24rem'
         },
-        dropShadow: {
-          'white': [
-              '0px 0px 1px rgba(255, 255, 255, 0.3)',
-          ]
+        colors: {
+          primary: {
+            DEFAULT: '#FDE047'
+          },
+          primaryGradient: {
+            DEFAULT: '#d946ef'
+          },
+          secondary: {
+            DEFAULT: '#EAF47C'
+          },
+          third: {
+            DEFAULT: '#000'            
+          },
+          thirdGradient: {
+            DEFAULT: '#000C0E'            
+          },
+          disabled: "gray"
         },
-      }
+      },
     }
   };
   
