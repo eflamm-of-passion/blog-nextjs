@@ -1,9 +1,24 @@
 import Head from "next/head";
 import { PropsWithChildren, useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import styles from "@/styles/Home.module.css";
 import Page from "@/components/Page";
+
+interface StaticProps {
+  locale: string;
+}
+export async function getStaticProps({ locale }: StaticProps) {
+  console.log("locale : " + locale);
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["home"])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 interface MainTitleProps {
   title: string;
@@ -74,19 +89,15 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-2/6 sm:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
+    <div className="w-11/12 sm:w-4/5 h-2/6 sm:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
       {props.children}
     </div>
   );
 }
 
 export default function Home() {
-  const introductionText = `> Ce site est en cours de construction, vous pourrez bientôt retrouver les sections suivantes :
-  - mes expériences professionnelles
-  - des articles sur le développement
-  - des articles sur mes activités en dehors du développement
-  - des informations à propos de ce site
-  - les moyens de me joindre`;
+  const { t } = useTranslation("home");
+
   return (
     <>
       <Head>
@@ -97,17 +108,17 @@ export default function Home() {
       </Head>
       <Page>
         <MainTitle title="Eflamm" />
-        <Introduction text={introductionText} />
+        <Introduction text={t("introduction")} />
         <Menu>
-          <Link href="/experiences">Expériences</Link>
+          <Link href="/experiences">{t("experiences")}</Link>
           <Link className="text-disabled cursor-not-allowed" href="#">
-            Articles
+            {t("articles")}
           </Link>
           <Link className="text-disabled cursor-not-allowed" href="#">
-            Blog
+            {t("blog")}
           </Link>
           <Link className="text-disabled cursor-not-allowed" href="#">
-            A propos
+            {t("about")}
           </Link>
         </Menu>
       </Page>
