@@ -8,6 +8,8 @@ import Head from "next/head";
 import Link from "next/link";
 
 import capitalize from "../utils/capitalize";
+import ArrowButton from "@/components/ArrowButton";
+import { useRouter } from "next/router";
 
 // inspirations :
 // https://kentcdodds.com/about
@@ -39,6 +41,8 @@ export async function getStaticProps({ locale }: StaticProps) {
 
 export default function About() {
   const { t } = useTranslation("about");
+  const router = useRouter();
+
   const title = "Eflamm - " + capitalize(t("about"));
 
   return (
@@ -68,6 +72,7 @@ export default function About() {
           <Paragraph>{t("myself-p2")}</Paragraph>
           <SectionTitle>{t("contact-me")}</SectionTitle>
           <Paragraph>[en construction]</Paragraph>
+          <ArrowButton direction="left" onClick={() => router.push("/")} />
         </div>
       </Page>
     </>
