@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import styles from "@/styles/Home.module.css";
 import Page from "@/components/Page";
+import Paragraph from "@/components/Paragraph";
 
 interface StaticProps {
   locale: string;
@@ -69,11 +70,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
   return (
     <div className="w-11/12 lg:w-4/6 h-1/6 flex items-start">
-      <p
-        className={
-          "font-mono text-sm sm:text-base text-secondary whitespace-pre-wrap drop-shadow-white "
-        }
-      >
+      <Paragraph>
         {textToDisplay}
         <span
           className={
@@ -82,7 +79,7 @@ const Introduction = ({ text }: IntroductionProps) => {
             (text.length === textToDisplay.length ? styles.caretBlinking : "")
           }
         />
-      </p>
+      </Paragraph>
     </div>
   );
 };
@@ -106,7 +103,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page>
+      <Page align="center">
         <MainTitle title="Eflamm" />
         <Introduction text={t("introduction")} />
         <Menu>
@@ -117,9 +114,7 @@ export default function Home() {
           <Link className="text-disabled cursor-not-allowed" href="#">
             {t("blog")}
           </Link>
-          <Link className="text-disabled cursor-not-allowed" href="#">
-            {t("about")}
-          </Link>
+          <Link href="/about">{t("about")}</Link>
         </Menu>
       </Page>
     </>

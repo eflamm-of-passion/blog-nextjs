@@ -1,0 +1,10 @@
+{
+  "about": "a propos",
+  "this-web-site": "ce site web",
+  "this-web-site-p1": "Sur ce site vous trouverez une page dédiée à mes expériences professionnelles, où je partage mon parcours et mes compétences dans le domaine du développement web. Vous pourrez également découvrir des articles sur mes projets personnels et mes intérêts en dehors du travail.",
+  "this-web-site-p2": "Si vous voulez savoir comment ce site a été implémenté, vous pouvez consulter le code source sur Gihub : ",
+  "myself": "moi-même",
+  "myself-p1": "Je m'appelle Eflamm OLLIVIER, Ollivier étant mon nom de famille (avec deux L). Et au cas où vous vous poseriez la question, Eflamm est un prénom d'origine bretonne qui n'est pas très répandu, donc ça ne m'étonnerait pas que je sois le premier que vous rencontriez.",
+  "myself-p2": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
+  "contact-me": "Contactez-moi"
+}
