@@ -55,7 +55,14 @@ export default function About() {
       </Head>
       <Page align="center">
         <div className="mt-5 md:mt-10 mx-5 md:mx-20 lg:max-w-screen-md xl:max-w-screen-lg">
-          <PageTitle>{capitalize(t("about"))}</PageTitle>
+          <div className="flex flex-row items-end -ml-6">
+            <ArrowButton
+              direction="left"
+              shape="square"
+              onClick={() => router.push("/")}
+            />
+            <PageTitle>{capitalize(t("about"))}</PageTitle>
+          </div>
           <SectionTitle>{t("this-web-site")}</SectionTitle>
           <Paragraph>{t("this-web-site-p1")}</Paragraph>
           <Paragraph>
@@ -72,7 +79,11 @@ export default function About() {
           <Paragraph>{t("myself-p2")}</Paragraph>
           <SectionTitle>{t("contact-me")}</SectionTitle>
           <Paragraph>[en construction]</Paragraph>
-          <ArrowButton direction="left" onClick={() => router.push("/")} />
+          <ArrowButton
+            direction="left"
+            shape="rectangular"
+            onClick={() => router.push("/")}
+          />
         </div>
       </Page>
     </>

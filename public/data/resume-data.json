@@ -1,193 +1,181 @@
 {
-    "brief": [
-      "5 ans d'expérience",
-      "Java",
-      "Javascript",
-      "React",
-      "Spring boot",
-      "Devops"
-    ],
-    "contactDetails": {
-      "firstName": "EFLAMM",
-      "lastName": "OLLIVIER",
-      "mail": "mail",
-      "phone": "tel.",
-      "city": "Nantes",
-      "age": "30 ans",
-      "driverLicense": "Permis B",
-      "linkedin": "linkedin.com/in/eflamm",
-      "github": "github.com/eflamm-of-passion",
-      "blog": "eflamm.net"
+  "brief": [
+    "5 ans d'expérience",
+    "Java",
+    "Javascript",
+    "React",
+    "Spring boot",
+    "Devops"
+  ],
+  "contactDetails": {
+    "firstName": "EFLAMM",
+    "lastName": "OLLIVIER",
+    "mail": "mail",
+    "phone": "tel.",
+    "city": "Nantes",
+    "age": "30 ans",
+    "driverLicense": "Permis B",
+    "linkedin": "linkedin.com/in/eflamm",
+    "github": "github.com/eflamm-of-passion",
+    "blog": "eflamm.net"
+  },
+  "languages": [
+    {
+      "language": "Français",
+      "level": "niveau C2"
     },
-    "languages": [
-      {
-        "language": "Français",
-        "level": "niveau C2"
-      },
-      {
-        "language": "Anglais",
-        "level": "niveau C1"
-      } 
-    ],
-    "introduction": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
-    "experiences": [
-      {
-        "title": "Développeur fullstack",
-        "company": "Kiwatch",
-        "companyLogo": "public/data/logo-kiwatch.jpg",
-        "location": "Nantes",
-        "startDate": "sept. 2020",
-        "endDate": "aujourd'hui",
-        "duration": "2 ans 6 mois",
-        "description": {
-          "summary":
-            "Chez Kiwatch, je développe et maintiens la solution de télésurveillance pour les particuliers et professionnels, utilisée en France et d'autres pays. J'ai participé au développement d'une application pour les clients pour leur permettre de contrôler leur système d'alarme, comprenant des centrales, des objets connectés et des caméras.",
-          "tasks": [
-            "analyser et développer les fonctionnalités demandées",
-            "mettre à jour le système d'information vers un modèle plus fiable et conforme aux standards du marché (e.g. migration de Java 8 vers Java 11)",
-            "former les nouveaux arrivants sur les aspects fonctionnels et techniques du SI",
-            "communiquer avec le métier afin de cerner le besoin",
-            "déployer les applications en production, investiguer et résoudre des incidents",
-            "effectuer des astreintes pour assurer la continuité du service",
-            "tester et intégrer les nouveaux équipements avec notre SI, échanger avec le fournisseur à propos des problèmes rencontrés"
-          ],
-          "stack":
-            "Environnement technique: Java, Guice, Javascript, React, JGroups, SQL, Linux, Eclipse, Tomcat, Jenkins, Sonarqube, centrale d'alarme, objets connectés, protocole SIA-CID"
-        }
-      },
-      {
-        "title": "Développeur web",
-        "company": "UNICEF Comité Paris Saint-Denis",
-        "companyLogo": "public/data/logo-unicef.jpg",
-        "location": "",
-        "startDate": "janv. 2020",
-        "endDate": "mars 2020",
-        "duration": "3 mois",
-        "description": {
-          "summary":
-            "J'ai créé un site web pour la campagne de Nassera Butin, qui a été élue présidente du comité d'UNICEF de Paris en 2020 et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne. ",
-          "tasks": [],
-          "stack":
-            "Environnement technique : HTML, CSS, Javascript, Ghost CMS, amCharts"
-        }
-      },
-      {
-        "title": "Développeur web",
-        "company": "Maisons du Monde",
-        "companyLogo": "public/data/logo-mdm.jpg",
-        "location": "Nantes",
-        "startDate": "juil. 2019",
-        "endDate": "oct. 2019",
-        "duration": "5 mois",
-        "description": {
-          "summary":
-            "Au sein du pôle Supply Chain Aval de la DSI, j'ai participé au maintien et à la refonte des outils de suivi du service Transport de Maisons du Monde. Je suis également intervenu de manière ponctuelle sur le support de niveau 3, principalement pour résoudre les problèmes d'intégration de flux entre les transporteurs tiers et Maisons du Monde.",
-          "tasks": [
-            "développer l'application front et l'API, dans le cadre de la refonte",
-            "analyser le code existant pour résoudre les bugs et le rendre plus maintenable",
-            "intégrer les nouveaux types de flux de données pour les transporteurs",
-            "résoudre les tickets de support N3",
-            "mettre à jour la documentation d'exploitation et les procédures"
-          ],
-          "stack":
-            "Environnement technique : Java, Javascript, Oracle Database, React, Spring Boot, Swagger, Linux, Jenkins, Gitlab, Jira"
-        }
-      },
-      {
-        "title": "Ingénieur d'études",
-        "company": "Smacl Assurances",
-        "companyLogo": "public/data/logo-smacl.jpg",
-        "location": "Niort",
-        "startDate": "janv. 2018",
-        "endDate": "févr. 2019",
-        "duration": "1 an 2 mois",
-        "description": {
-          "summary":
-            "A la SMACL j'ai participé à plusieurs projets en développant des fonctionnalités, en proposant des solutions, et en travaillant en équipe pour atteindre les objectifs de chaque projet.",
-          "tasks": [],
-          "projects": [
-            {
-              "summary":
-                "J'ai participé au développement du site de recrutement Smacl Recrute à destination des candidats.",
-              "tasks": [
-                "développer les fonctionnalités exigées, en front-end et back-end",
-                "communiquer avec le métier afin de cerner le besoin",
-                "corriger les anomalies qui sont remontées",
-                "préparer la livraison dans les différents environnements"
-              ]
-            },
-            {
-              "summary":
-                "J'ai développé une application de référentiel pour une organisation, qui affiche ses entités et contrats d'assurance sous forme d'arborescence. Les services développés sont consommés par d'autres applications de la SMACL.",
-              "tasks": [
-                "analyser le besoin, définir le schéma de données",
-                "développer les fonctionnalités rédigées dans les users stories",
-                "présenter les démos de ce qui a été produit"
-              ]
-            }
-          ],
-          "stack":
-            "Environnement technique : Spring boot, Angular 2+, Maven, Hibernate, Jenkins, Redmine, SVN, Centos, Eclipse, Visual Studio Code, LDAP, REST, Php"
-        }
+    {
+      "language": "Anglais",
+      "level": "niveau B2"
+    }
+  ],
+  "introduction": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
+  "experiences": [
+    {
+      "title": "Développeur fullstack",
+      "company": "Kiwatch",
+      "companyLogo": "public/data/logo-kiwatch.jpg",
+      "location": "Nantes",
+      "startDate": "sept. 2020",
+      "endDate": "aujourd'hui",
+      "duration": "2 ans 6 mois",
+      "description": {
+        "summary": "Chez Kiwatch, je développe et maintiens la solution de télésurveillance pour les particuliers et professionnels, utilisée en France et d'autres pays. J'ai participé au développement d'une application pour les clients pour leur permettre de contrôler leur système d'alarme, comprenant des centrales, des objets connectés et des caméras.",
+        "tasks": [
+          "analyser et développer les fonctionnalités demandées",
+          "mettre à jour le système d'information vers un modèle plus fiable et conforme aux standards du marché (e.g. migration de Java 8 vers Java 11)",
+          "former les nouveaux arrivants sur les aspects fonctionnels et techniques du SI",
+          "communiquer avec le métier afin de cerner le besoin",
+          "déployer les applications en production, investiguer et résoudre des incidents",
+          "effectuer des astreintes pour assurer la continuité du service",
+          "tester et intégrer les nouveaux équipements avec notre SI, échanger avec le fournisseur à propos des problèmes rencontrés"
+        ],
+        "stack": "Environnement technique: Java, Guice, Javascript, React, JGroups, SQL, Linux, Eclipse, Tomcat, Jenkins, Sonarqube, centrale d'alarme, objets connectés, protocole SIA-CID"
       }
-    ],
-    "volunteering": [
-      {
-        "title": "Chef scout",
-        "company": "Scouts et Guides de France",
-        "companyLogo": "public/data/logo-sgdf.jpg",
-        "location": "Nantes",
-        "startDate": "oct. 2017",
-        "endDate": "aujourd'hui",
-        "duration": "5 ans 5 mois",
-        "description": {
-          "summary":
-            "En tant que chef des Scouts et Guides de France, j'ai la responsabilité de diriger une unité composée d'une vingtaine de jeunes âgés de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
-          "tasks": [
-            "préparer et animer les activités",
-            "gérer le budget alloué pour l'année",
-            "organiser les sorties, week-ends campés et le camp d'été",
-            "communiquer auprès des parents de notre pédagogie et des évènements à venir",
-            "accompagner les jeunes à dans leur prise de responsabilité, et la réalisation de leurs projets en unité",
-            "définir les priorités pédagogiques en fonction du besoin des jeunes",
-            "collaborer avec les chefs des autres groupes de la région",
-            "soutenir le projet pédagogique proposé par les Scouts et Guides de France"
-          ]
-        }
-      },
-      {
-        "title": "Chef de projet SI digital",
-        "company": "UNICEF Comité Paris Saint-Denis",
-        "companyLogo": "public/data/logo-unicef.jpg",
-        "location": "Paris",
-        "startDate": "mars 2020",
-        "endDate": "janv. 2021",
-        "duration": "11 mois",
-        "description": {
-          "summary":
-            "J'ai aidé le comité de Paris Saint-Denis en mettant en place des outils de gestion et de communication digitale pour les bénévoles, et j'ai contribué aux décisions stratégiques en participant aux réunions du bureau élargi.",
-          "tasks": []
-        }
+    },
+    {
+      "title": "Développeur web",
+      "company": "UNICEF Comité Paris Saint-Denis",
+      "companyLogo": "public/data/logo-unicef.jpg",
+      "location": "",
+      "startDate": "janv. 2020",
+      "endDate": "mars 2020",
+      "duration": "3 mois",
+      "description": {
+        "summary": "J'ai créé un site web pour la campagne de Nassera Butin, qui a été élue présidente du comité d'UNICEF de Paris en 2020 et Seine Saint Denis. J'ai écouté ses besoins pour concevoir un site qui reflète sa personnalité et présente toutes les informations liées à sa campagne. ",
+        "tasks": [],
+        "stack": "Environnement technique : HTML, CSS, Javascript, Ghost CMS, amCharts"
       }
-    ],
-    "education": [
-      {
-        "title": "Master MIAGE",
-        "institution": "Université de Nantes",
-        "startYear": "2013",
-        "endYear": "2017"
-      },
-      {
-        "title": "DUT informatique",
-        "institution": "IUT de Vannes",
-        "startYear": "2011",
-        "endYear": "2013"
-      },
-      {
-        "title": "Baccalauréat Economique et Social",
-        "institution": "Lycée Saint Paul - Vannes",
-        "startYear": "2008",
-        "endYear": "2011"
+    },
+    {
+      "title": "Développeur web",
+      "company": "Maisons du Monde",
+      "companyLogo": "public/data/logo-mdm.jpg",
+      "location": "Nantes",
+      "startDate": "juil. 2019",
+      "endDate": "oct. 2019",
+      "duration": "5 mois",
+      "description": {
+        "summary": "Au sein du pôle Supply Chain Aval de la DSI, j'ai participé au maintien et à la refonte des outils de suivi du service Transport de Maisons du Monde. Je suis également intervenu de manière ponctuelle sur le support de niveau 3, principalement pour résoudre les problèmes d'intégration de flux entre les transporteurs tiers et Maisons du Monde.",
+        "tasks": [
+          "développer l'application front et l'API, dans le cadre de la refonte",
+          "analyser le code existant pour résoudre les bugs et le rendre plus maintenable",
+          "intégrer les nouveaux types de flux de données pour les transporteurs",
+          "résoudre les tickets de support N3",
+          "mettre à jour la documentation d'exploitation et les procédures"
+        ],
+        "stack": "Environnement technique : Java, Javascript, Oracle Database, React, Spring Boot, Swagger, Linux, Jenkins, Gitlab, Jira"
       }
-    ]
-  }
+    },
+    {
+      "title": "Ingénieur d'études",
+      "company": "Smacl Assurances",
+      "companyLogo": "public/data/logo-smacl.jpg",
+      "location": "Niort",
+      "startDate": "janv. 2018",
+      "endDate": "févr. 2019",
+      "duration": "1 an 2 mois",
+      "description": {
+        "summary": "A la SMACL j'ai participé à plusieurs projets en développant des fonctionnalités, en proposant des solutions, et en travaillant en équipe pour atteindre les objectifs de chaque projet.",
+        "tasks": [],
+        "projects": [
+          {
+            "summary": "J'ai participé au développement du site de recrutement Smacl Recrute à destination des candidats.",
+            "tasks": [
+              "développer les fonctionnalités exigées, en front-end et back-end",
+              "communiquer avec le métier afin de cerner le besoin",
+              "corriger les anomalies qui sont remontées",
+              "préparer la livraison dans les différents environnements"
+            ]
+          },
+          {
+            "summary": "J'ai développé une application de référentiel pour une organisation, qui affiche ses entités et contrats d'assurance sous forme d'arborescence. Les services développés sont consommés par d'autres applications de la SMACL.",
+            "tasks": [
+              "analyser le besoin, définir le schéma de données",
+              "développer les fonctionnalités rédigées dans les users stories",
+              "présenter les démos de ce qui a été produit"
+            ]
+          }
+        ],
+        "stack": "Environnement technique : Spring boot, Angular 2+, Maven, Hibernate, Jenkins, Redmine, SVN, Centos, Eclipse, Visual Studio Code, LDAP, REST, Php"
+      }
+    }
+  ],
+  "volunteering": [
+    {
+      "title": "Chef scout",
+      "company": "Scouts et Guides de France",
+      "companyLogo": "public/data/logo-sgdf.jpg",
+      "location": "Nantes",
+      "startDate": "oct. 2017",
+      "endDate": "aujourd'hui",
+      "duration": "5 ans 5 mois",
+      "description": {
+        "summary": "En tant que chef des Scouts et Guides de France, j'ai la responsabilité de diriger une unité composée d'une vingtaine de jeunes âgés de 11 à 14 ans. L'objectif de ce mouvement est d'éduquer les jeunes à devenir des citoyens actifs et artisans de paix.",
+        "tasks": [
+          "préparer et animer les activités",
+          "gérer le budget alloué pour l'année",
+          "organiser les sorties, week-ends campés et le camp d'été",
+          "communiquer auprès des parents de notre pédagogie et des évènements à venir",
+          "accompagner les jeunes à dans leur prise de responsabilité, et la réalisation de leurs projets en unité",
+          "définir les priorités pédagogiques en fonction du besoin des jeunes",
+          "collaborer avec les chefs des autres groupes de la région",
+          "soutenir le projet pédagogique proposé par les Scouts et Guides de France"
+        ]
+      }
+    },
+    {
+      "title": "Chef de projet SI digital",
+      "company": "UNICEF Comité Paris Saint-Denis",
+      "companyLogo": "public/data/logo-unicef.jpg",
+      "location": "Paris",
+      "startDate": "mars 2020",
+      "endDate": "janv. 2021",
+      "duration": "11 mois",
+      "description": {
+        "summary": "J'ai aidé le comité de Paris Saint-Denis en mettant en place des outils de gestion et de communication digitale pour les bénévoles, et j'ai contribué aux décisions stratégiques en participant aux réunions du bureau élargi.",
+        "tasks": []
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": "Master MIAGE",
+      "institution": "Université de Nantes",
+      "startYear": "2013",
+      "endYear": "2017"
+    },
+    {
+      "title": "DUT informatique",
+      "institution": "IUT de Vannes",
+      "startYear": "2011",
+      "endYear": "2013"
+    },
+    {
+      "title": "Baccalauréat Economique et Social",
+      "institution": "Lycée Saint Paul - Vannes",
+      "startYear": "2008",
+      "endYear": "2011"
+    }
+  ]
+}
