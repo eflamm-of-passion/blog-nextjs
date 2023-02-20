@@ -84,9 +84,8 @@ export default async function handler(
   };
 
   interface ColumnProps {
-    children: ReactNode;
+    children: ReactNode | undefined;
   }
-
   const LeftColumn = ({ children }: ColumnProps) => {
     const style: React.CSSProperties = {
       display: "inline-block",
@@ -98,7 +97,6 @@ export default async function handler(
     };
     return <div style={style}>{children}</div>;
   };
-
   const RightColumn = ({ children }: ColumnProps) => {
     const style: React.CSSProperties = {
       display: "inline-block",

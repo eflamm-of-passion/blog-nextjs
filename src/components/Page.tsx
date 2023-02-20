@@ -1,8 +1,8 @@
-import { PropsWithChildren, ReactComponentElement } from "react";
+import { ReactNode } from "react";
 
 export interface PageProps {
-  align: "start" | "center" | "end";
-  children: string | JSX.Element | JSX.Element[];
+  align?: "start" | "center" | "end";
+  children: ReactNode | undefined;
 }
 export default function Page(props: PageProps) {
   let flexAlignment = "start";

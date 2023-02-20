@@ -30,7 +30,6 @@ interface StaticProps {
   locale: string;
 }
 export async function getStaticProps({ locale }: StaticProps) {
-  console.log("locale : " + locale);
   return {
     props: {
       ...(await serverSideTranslations(locale, ["about"])),
