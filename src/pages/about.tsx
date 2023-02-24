@@ -38,6 +38,26 @@ export async function getStaticProps({ locale }: StaticProps) {
   };
 }
 
+function ContactForm() {
+  return (
+    <form name="contact" method="POST" data-netlify="true">
+      <Paragraph>
+        <label>
+          Name <input type="text" name="name" />
+        </label>
+      </Paragraph>
+      <Paragraph>
+        <label>
+          Email <input type="email" name="email" />
+        </label>
+      </Paragraph>
+      <Paragraph>
+        <button type="submit">Send</button>
+      </Paragraph>
+    </form>
+  );
+}
+
 export default function About() {
   const { t } = useTranslation("about");
   const router = useRouter();
@@ -77,7 +97,7 @@ export default function About() {
           <Paragraph>{t("myself-p1")}</Paragraph>
           <Paragraph>{t("myself-p2")}</Paragraph>
           <SectionTitle>{t("contact-me")}</SectionTitle>
-          <Paragraph>[en construction]</Paragraph>
+          <ContactForm />
           <ArrowButton
             direction="left"
             shape="rectangular"
