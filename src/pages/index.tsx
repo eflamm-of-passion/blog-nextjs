@@ -107,9 +107,7 @@ export default function Home() {
         <Introduction text={t("introduction")} />
         <Menu>
           <Link href="/experiences">{t("experiences")}</Link>
-          <Link className="text-disabled cursor-not-allowed" href="#">
-            {t("articles")}
-          </Link>
+          <Link href="/articles">{t("articles")}</Link>
           <Link className="text-disabled cursor-not-allowed" href="#">
             {t("blog")}
           </Link>
