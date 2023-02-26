@@ -466,5 +466,6 @@ export default async function handler(
   await browser.close();
 
   res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", 'filename="cv_eflamm_ollivier.pdf"');
   res.send(pdf);
 }

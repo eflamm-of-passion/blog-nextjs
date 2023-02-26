@@ -30,23 +30,14 @@ const MainTitle = ({ title }: MainTitleProps) => {
     return index % 2 ? " mt-16 sm:mt-40 md:mt-16 lg:mt-20 xl:mt-46 " : "";
   };
   return (
-    <div className="w-full h-1/6 sm:h-4/6 ">
+    <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-4/6 ">
       <p
         className={
           styles.mainTitleFont +
-          " w-full flex justify-center items-center text-sizeable lg:text-enormous xl:text-gargantua text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient "
+          " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-7xl sm:text-sizeable lg:text-enormous xl:text-enormous tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
         }
       >
-        {arrName.map((letter: string, index: number) => (
-          <span
-            className={
-              " -mx-0 md:mx-4 lg:mx-5 xl:mx-6" + alternatePosition(index)
-            }
-            key={Math.random()}
-          >
-            {letter}
-          </span>
-        ))}
+        {title.toUpperCase()}
       </p>
     </div>
   );
@@ -68,7 +59,7 @@ const Introduction = ({ text }: IntroductionProps) => {
   }, [index]);
 
   return (
-    <div className="w-11/12 lg:w-4/6 h-1/6 flex items-start">
+    <div className="w-11/12 lg:w-4/6 h-1/3 lg:h-1/6 flex items-start">
       <Paragraph>
         {textToDisplay}
         <span
@@ -85,7 +76,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-2/6 sm:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300 drop-shadow-white">
+    <div className="w-11/12 sm:w-4/5 h-1/3 lg:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300">
       {props.children}
     </div>
   );
@@ -106,12 +97,18 @@ export default function Home() {
         <MainTitle title="Eflamm" />
         <Introduction text={t("introduction")} />
         <Menu>
-          <Link href="/experiences">{t("experiences")}</Link>
-          <Link href="/articles">{t("articles")}</Link>
+          <Link className="hover:underline" href="/experiences">
+            {t("experiences")}
+          </Link>
+          <Link className="hover:underline" href="/articles">
+            {t("articles")}
+          </Link>
           <Link className="text-disabled cursor-not-allowed" href="#">
             {t("blog")}
           </Link>
-          <Link href="/about">{t("about")}</Link>
+          <Link className="hover:underline" href="/about">
+            {t("about")}
+          </Link>
         </Menu>
       </Page>
     </>
