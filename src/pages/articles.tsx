@@ -61,19 +61,22 @@ export default function Articles({ articles }: ArticlesProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page align="center">
-        <div className="mt-5 md:mt-10 mx-5 md:mx-20 lg:max-w-screen-md xl:max-w-screen-lg">
-          <div className="flex flex-row items-end -ml-6">
+      <Page>
+        <div className="flex flex-row items-end -ml-6">
+          <div className="-mb-1 sm:mb-0">
             <ArrowButton
               direction="left"
               shape="square"
               onClick={() => router.push("/")}
             />
-            <PageTitle>{capitalize(t("articles"))}</PageTitle>
           </div>
-          {articles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
-          ))}
+          <PageTitle>{capitalize(t("articles"))}</PageTitle>
+        </div>
+        {articles.map((article) => (
+          <ArticleCard key={article.slug} article={article} />
+        ))}
+        <div className="h-20" />
+        <div className="fixed bottom-2 sm:bottom-10">
           <ArrowButton
             direction="left"
             shape="rectangular"

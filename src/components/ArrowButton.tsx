@@ -30,7 +30,7 @@ export default function ArrowButton({
       break;
     case "square":
       shapeContainerClasses =
-        "flex w-10 sm:w-12 h-10 sm:h-12 m-2 text-2xl sm:text-4xl ";
+        "flex w-10 sm:w-12 h-10 sm:h-12 m-2 text-3xl sm:text-4xl ";
       break;
     default:
       shapeContainerClasses = "flex w-20 sm:w-24 h-10 sm:h-12 my-2  ";

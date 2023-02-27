@@ -15,8 +15,8 @@ export default function OutlineButton({
         "items-center justify-center p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
       }
     >
-      <div className="flex items-center justify-center w-full h-full bg-third hover:bg-gray-900 rounded-lg text-lg">
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient">
+      <div className="flex items-center justify-center w-full h-full p-2 bg-third hover:bg-gray-900 rounded-lg">
+        <span className="text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient">
           {label}
         </span>
       </div>

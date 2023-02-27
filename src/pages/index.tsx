@@ -25,16 +25,12 @@ interface MainTitleProps {
 }
 
 const MainTitle = ({ title }: MainTitleProps) => {
-  const arrName = Object.assign([], title.toUpperCase());
-  const alternatePosition = (index: number) => {
-    return index % 2 ? " mt-16 sm:mt-40 md:mt-16 lg:mt-20 xl:mt-46 " : "";
-  };
   return (
-    <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-4/6 ">
+    <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-1/2 ">
       <p
         className={
           styles.mainTitleFont +
-          " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-7xl sm:text-sizeable lg:text-enormous xl:text-enormous tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
+          " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-8xl sm:text-sizeable lg:text-enormous xl:text-enormous tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
         }
       >
         {title.toUpperCase()}
@@ -59,7 +55,7 @@ const Introduction = ({ text }: IntroductionProps) => {
   }, [index]);
 
   return (
-    <div className="w-11/12 lg:w-4/6 h-1/3 lg:h-1/6 flex items-start">
+    <div className="w-full h-1/3 lg:h-1/6 flex items-start">
       <Paragraph>
         {textToDisplay}
         <span
@@ -93,23 +89,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page align="center">
-        <MainTitle title="Eflamm" />
-        <Introduction text={t("introduction")} />
-        <Menu>
-          <Link className="hover:underline" href="/experiences">
-            {t("experiences")}
-          </Link>
-          <Link className="hover:underline" href="/articles">
-            {t("articles")}
-          </Link>
-          <Link className="text-disabled cursor-not-allowed" href="#">
-            {t("blog")}
-          </Link>
-          <Link className="hover:underline" href="/about">
-            {t("about")}
-          </Link>
-        </Menu>
+      <Page>
+        <div className="w-full h-full flex flex-col justify-between items-center">
+          <MainTitle title="Eflamm" />
+          <Introduction text={t("introduction")} />
+          <Menu>
+            <Link className="hover:underline" href="/experiences">
+              {t("experiences")}
+            </Link>
+            <Link className="hover:underline" href="/articles">
+              {t("articles")}
+            </Link>
+            <Link className="text-disabled cursor-not-allowed" href="#">
+              {t("blog")}
+            </Link>
+            <Link className="hover:underline" href="/about">
+              {t("about")}
+            </Link>
+          </Menu>
+        </div>
       </Page>
     </>
   );

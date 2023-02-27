@@ -1,30 +1,18 @@
 import { ReactNode } from "react";
 
 export interface PageProps {
-  align?: "start" | "center" | "end";
   children: ReactNode | undefined;
 }
 export default function Page(props: PageProps) {
-  let flexAlignment = "start";
-  switch (props.align) {
-    case "start":
-      flexAlignment = "items-start ";
-      break;
-    case "center":
-      flexAlignment = "items-center ";
-      break;
-    case "end":
-      flexAlignment = "items-end ";
-      break;
-  }
   return (
     <main
       className={
-        flexAlignment +
-        "light h-screen flex flex-col justify-between bg-gradient-to-br from-third to-thirdGradient overflow-auto"
+        "flex justify-center h-full min-h-screen bg-gradient-to-br from-third to-thirdGradient overflow-auto"
       }
     >
-      {props.children}
+      <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-4xl">
+        {props.children}
+      </div>
     </main>
   );
 }

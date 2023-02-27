@@ -52,30 +52,34 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page align="center">
-        <div className="mt-5 md:mt-10 mx-5 md:mx-20 lg:max-w-screen-md xl:max-w-screen-lg">
-          <div className="flex flex-row items-end -ml-6">
+      <Page>
+        <div className="flex flex-row items-end -ml-6">
+          <div className="-mb-1 sm:mb-0">
             <ArrowButton
               direction="left"
               shape="square"
               onClick={() => router.push("/")}
             />
-            <PageTitle>{capitalize(t("about"))}</PageTitle>
           </div>
-          <SectionTitle>{t("this-web-site")}</SectionTitle>
-          <Paragraph>{t("this-web-site-p1")}</Paragraph>
-          <Paragraph>
-            {t("this-web-site-p2")}
-            <Link
-              className="text-sm sm:text-base lg:text-lg text-blue-400 visited:text-blue-600"
-              href="https://github.com/eflamm-of-passion/blog-nextjs"
-            >
-              https://github.com/eflamm-of-passion/blog-nextjs
-            </Link>
-          </Paragraph>
-          <SectionTitle>{t("myself")}</SectionTitle>
-          <Paragraph>{t("myself-p1")}</Paragraph>
-          <Paragraph>{t("myself-p2")}</Paragraph>
+          <PageTitle>{capitalize(t("about"))}</PageTitle>
+        </div>
+        <SectionTitle>{t("this-web-site")}</SectionTitle>
+        <Paragraph>{t("this-web-site-p1")}</Paragraph>
+        <Paragraph>
+          {t("this-web-site-p2")}
+          <Link
+            className="text-sm sm:text-base lg:text-lg text-blue-400 visited:text-blue-600"
+            href="https://github.com/eflamm-of-passion/blog-nextjs"
+          >
+            https://github.com/eflamm-of-passion/blog-nextjs
+          </Link>
+        </Paragraph>
+        <SectionTitle>{t("myself")}</SectionTitle>
+        <Paragraph>{t("myself-p1")}</Paragraph>
+        <Paragraph>{t("myself-p2")}</Paragraph>
+
+        <div className="h-20" />
+        <div className="fixed bottom-2 sm:bottom-10">
           <ArrowButton
             direction="left"
             shape="rectangular"
