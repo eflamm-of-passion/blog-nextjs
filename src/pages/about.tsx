@@ -77,9 +77,10 @@ export default function About() {
         <SectionTitle>{t("myself")}</SectionTitle>
         <Paragraph>{t("myself-p1")}</Paragraph>
         <Paragraph>{t("myself-p2")}</Paragraph>
+        <Paragraph>{t("myself-p3")}</Paragraph>
 
         <div className="h-20" />
-        <div className="fixed bottom-2 sm:bottom-10">
+        <div className="fixed bottom-2 sm:bottom-5">
           <ArrowButton
             direction="left"
             shape="rectangular"

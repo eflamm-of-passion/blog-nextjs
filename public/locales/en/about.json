@@ -1,1 +1,11 @@
-{}
+{
+  "about": "about",
+  "this-web-site": "this web site",
+  "this-web-site-p1": "As a web developer, I thought it would be interesting for me to have a personal website to experiment with new technologies and have a space for creativity. But I also realized that it could be useful to document concepts that I would like to remember or to present my background.",
+  "this-web-site-p2": "If you want to know how this website was implemented, you can check out the source code on Github : ",
+  "myself": "myself",
+  "myself-p1": "Hey, I’m Eflamm, I am a full stack developer with 5 years of experience. I mainly code with Java and Javascript, and related frameworks and libraries like Spring and React.",
+  "myself-p2": "I currently live in Nantes, where I work for Kiwatch, a remote monitoring company. Outside of work, I'm also an enthusiastic scout leader. I enjoy teaching children the practical skills of cooking with seasonal produce, building impactful projects, and fostering a sense of community.",
+  "myself-p3": "When I'm not coding or scouting, I enjoy diving into a wide range of topics on Youtube - from history and society to cutting-edge technology. I also like working on side projects, such as this website, and spending my free time playing video games or repairing my bike.",
+  "contact-me": "contact me"
+}

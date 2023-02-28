@@ -1,10 +1,11 @@
 {
   "about": "a propos",
   "this-web-site": "ce site web",
-  "this-web-site-p1": "Sur ce site vous trouverez une page dédiée à mes expériences professionnelles, où je partage mon parcours et mes compétences dans le domaine du développement web. Vous pourrez également découvrir des articles sur mes projets personnels et mes intérêts en dehors du travail.",
+  "this-web-site-p1": "En tant que développeur web, j'ai pensé qu'il serait intéressant pour moi d'avoir un site personnel pour expérimenter de nouvelles technologies et exprimer ma créativté. Mais j'ai également réalisé qu'il pourrait me servir à documenter les concepts que je voudrais garder en mémoire ou pour présenter mon parcours.",
   "this-web-site-p2": "Si vous voulez savoir comment ce site a été implémenté, vous pouvez consulter le code source sur Gihub : ",
   "myself": "moi-même",
-  "myself-p1": "Je m'appelle Eflamm OLLIVIER, Ollivier étant mon nom de famille (avec deux L). Et au cas où vous vous poseriez la question, Eflamm est un prénom d'origine bretonne qui n'est pas très répandu, donc ça ne m'étonnerait pas que je sois le premier que vous rencontriez.",
-  "myself-p2": "Je suis un développeur web de 5 ans d'expérience, je développe principalement en Java et Javascript avec React et Spring boot. Je me tiens régulièrement au courant des nouvelles technologies et méthodes de développement.",
-  "contact-me": "Contactez-moi"
+  "myself-p1": "Bonjour ! Je m'appelle Eflamm, je suis un développeur full stack d’environ 5 ans d'expérience. Je code principalement en Java et en Javascript, ainsi qu'en utilisant des frameworks tels que Spring et React.",
+  "myself-p2": "J'habite actuellement à Nantes où je travaille pour Kiwatch, une entreprise spécialisée dans la surveillance à distance. Je suis également chef scout, j’emmène des jeunes de 11 à 14 ans camper, faire du feu, cuisiner avec des produits locaux et de saisons, leur apprendre à vivre en communauté, et construire des projets qui ont du sens.",
+  "myself-p3": "En dehors du travail et du scoutisme, je passe le reste de mon temps à regarder des vidéos sur des chaînes Youtube traitant de sujets de sociétés, d’histoire ou de technologie. Je travaille aussi de temps en temps sur des projets persos comme ce site web, jouer à des jeux vidéo ou à réparer mon vélo, qui malheureusement a souvent tendance à crever.",
+  "contact-me": "contactez-moi"
 }
