@@ -72,7 +72,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-1/3 lg:h-1/6 flex items-center sm:items-end justify-around flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300">
+    <div className="w-11/12 sm:w-4/5 h-1/3 lg:h-1/6 flex items-center sm:items-end justify-between flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300">
       {props.children}
     </div>
   );
@@ -99,9 +99,6 @@ export default function Home() {
             </Link>
             <Link className="hover:underline" href="/articles">
               {t("articles")}
-            </Link>
-            <Link className="text-disabled cursor-not-allowed" href="#">
-              {t("blog")}
             </Link>
             <Link className="hover:underline" href="/about">
               {t("about")}

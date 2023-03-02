@@ -65,7 +65,7 @@ export default function Experiences() {
                 theme.extend.colors.primary.DEFAULT,
               ]}
             />
-            <Paragraph align="center">{t("my-linkedin-account")}</Paragraph>
+            <Paragraph align="center">{t("my-github-account")}</Paragraph>
           </Link>
           <Link
             href="https://www.linkedin.com/in/eflamm/"

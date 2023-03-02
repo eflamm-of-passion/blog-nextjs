@@ -63,21 +63,21 @@ export default function About() {
           </div>
           <PageTitle>{capitalize(t("about"))}</PageTitle>
         </div>
+        <SectionTitle>{t("myself")}</SectionTitle>
+        <Paragraph>{t("myself-p1")}</Paragraph>
+        <Paragraph>{t("myself-p2")}</Paragraph>
+        <Paragraph>{t("myself-p3")}</Paragraph>
         <SectionTitle>{t("this-web-site")}</SectionTitle>
         <Paragraph>{t("this-web-site-p1")}</Paragraph>
         <Paragraph>
           {t("this-web-site-p2")}
           <Link
-            className="text-sm sm:text-base lg:text-lg text-blue-400 visited:text-blue-600"
+            className="text-sm sm:text-base lg:text-lg text-blue-400 hover:text-blue-300 visited:text-blue-600"
             href="https://github.com/eflamm-of-passion/blog-nextjs"
           >
             https://github.com/eflamm-of-passion/blog-nextjs
           </Link>
         </Paragraph>
-        <SectionTitle>{t("myself")}</SectionTitle>
-        <Paragraph>{t("myself-p1")}</Paragraph>
-        <Paragraph>{t("myself-p2")}</Paragraph>
-        <Paragraph>{t("myself-p3")}</Paragraph>
 
         <div className="h-20" />
         <div className="fixed bottom-2 sm:bottom-5">

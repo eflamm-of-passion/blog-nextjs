@@ -10,7 +10,7 @@ function Paragraph({ align, children }: ParagraphProps) {
     <p
       className={
         alignClass +
-        " mt-5 sm:mt-10 font-mono text-sm sm:text-xl lg:text-xl text-secondary whitespace-pre-wrap drop-shadow-white"
+        " mt-5 sm:mt-10 font-mono text-sm sm:text-xl lg:text-xl text-secondary whitespace-pre-wrap"
       }
     >
       {children}
