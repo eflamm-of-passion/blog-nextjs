@@ -19,8 +19,17 @@ export type ArticleData = {
   title: string;
   excerpt: string;
   content: string;
-  creationDate: Date;
-  updateDate: Date;
+  createdAt: Date;
+  updatedAt: Date;
   author: string;
+  slug: string;
+  timeToRead: number;
+};
+
+export type StaticPath = {
+  params: StaticPathParams;
+};
+
+export type StaticPathParams = {
   slug: string;
 };

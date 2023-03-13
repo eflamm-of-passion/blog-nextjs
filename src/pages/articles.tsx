@@ -11,12 +11,14 @@ import OutlineButton from "@/components/OutlineButton";
 import Paragraph from "@/components/Paragraph";
 import strapiApi from "@/lib/strapi";
 import { ArticleData } from "@/types/strapi.type";
+import Text from "@/components/Text";
 
 interface StaticProps {
   locale: string;
 }
 export async function getStaticProps({ locale }: StaticProps) {
-  const articlesResponse = await strapiApi.getArticles();
+  const articlesResponse = await strapiApi.getArticles(locale);
+
   return {
     props: {
       articles: articlesResponse.data.map(
@@ -32,13 +34,47 @@ interface ArticleCardProps {
   article: ArticleData;
 }
 function ArticleCard({ article }: ArticleCardProps) {
-  console.table(article);
+  const { t, i18n } = useTranslation("articles");
+  const formattedUpdatedAt = new Date(article.updatedAt).toLocaleDateString(
+    i18n.language,
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }
+  );
+
   return (
     <div className="flex justify-center my-5">
-      <Link className="block w-2/3" href="#">
-        <OutlineButton>
-          <Paragraph>{article.title}</Paragraph>
-        </OutlineButton>
+      <Link className="block w-full" href={"articles/" + article.slug}>
+        <div
+          className={
+            "items-center justify-center my-4 p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
+          }
+        >
+          <div className="flex flex-col items-start w-full h-full p-4 bg-third hover:bg-gray-900 rounded-lg">
+            <div>
+              <Text
+                style="highlight"
+                className="uppercase text-3xl tracking-wider font-semibold"
+              >
+                {article.title}
+              </Text>
+            </div>
+            <div className="w-full flex justify-around my-1 text-lg tracking-tighter italic text-gray-400">
+              <Text style="note">{t("updated-on") + formattedUpdatedAt}</Text>
+              <Text style="note">
+                {t("time-to-read") +
+                  ": " +
+                  article.timeToRead +
+                  t("minutes-abbreviation")}
+              </Text>
+            </div>
+            <div>
+              <Text style="basic">{article.excerpt}</Text>
+            </div>
+          </div>
+        </div>
       </Link>
     </div>
   );
@@ -62,8 +98,8 @@ export default function Articles({ articles }: ArticlesProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Page>
-        <div className="flex flex-row items-end -ml-6">
-          <div className="-mb-1 sm:mb-0">
+        <div className="flex flex-row items-end mt-10 -ml-6">
+          <div className="-mb-1 sm:mb-0 mr-4">
             <ArrowButton
               direction="left"
               shape="square"

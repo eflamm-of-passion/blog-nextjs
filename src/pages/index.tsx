@@ -26,11 +26,11 @@ interface MainTitleProps {
 
 const MainTitle = ({ title }: MainTitleProps) => {
   return (
-    <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-1/2 ">
+    <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-1/2">
       <p
         className={
           styles.mainTitleFont +
-          " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-8xl sm:text-sizeable lg:text-enormous xl:text-enormous tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
+          " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-8xl sm:text-sizeable lg:text-sizeable xl:text-sizeable tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
         }
       >
         {title.toUpperCase()}
@@ -55,8 +55,8 @@ const Introduction = ({ text }: IntroductionProps) => {
   }, [index]);
 
   return (
-    <div className="w-full h-1/3 lg:h-1/6 flex items-start">
-      <Paragraph>
+    <div className="w-full h-1/3 flex items-start ">
+      <Paragraph size="big">
         {textToDisplay}
         <span
           className={
@@ -72,7 +72,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
 function Menu(props: PropsWithChildren) {
   return (
-    <div className="w-11/12 sm:w-4/5 h-1/3 lg:h-1/6 flex items-center sm:items-end justify-between flex-col sm:flex-row pb-10 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300">
+    <div className="w-11/12 sm:w-4/5 h-1/3 lg:h-1/6 flex items-center sm:items-end justify-between flex-col sm:flex-row pb-10 pt-10 sm:pt-0 font-mono text-xl sm:text-3xl capitalize tracking-wide sm:tracking-wider text-orange-300">
       {props.children}
     </div>
   );

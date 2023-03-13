@@ -1,3 +1,6 @@
 {
-  "articles": "articles"
+  "articles": "articles",
+  "updated-on": "mis à jour le ",
+  "time-to-read": "temps de lecture",
+  "minutes-abbreviation": "mn"
 }

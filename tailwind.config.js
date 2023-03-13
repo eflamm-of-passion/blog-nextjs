@@ -8,9 +8,7 @@ module.exports = {
         // https://coolors.co/000000-000c0e-fde047-d946ef-eaf47c
         fontSize: {
           'sizeable': '10rem',
-          'giant': '14rem',
-          'enormous': '17rem',
-          'gargantua': '24rem'
+          'giant': '14rem'
         },
         colors: {
           primary: {

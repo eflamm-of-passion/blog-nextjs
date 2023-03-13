@@ -284,14 +284,18 @@ export default async function handler(
     return (
       <>
         <h2>Contact</h2>
-        <div style={contactDetailsLine}>
-          <MailIcon />
-          <p style={linkStyle}>{process.env.MY_MAIL_ADDRESS}</p>
-        </div>
-        <div style={contactDetailsLine}>
-          <CallIcon />
-          <p>{process.env.MY_PHONE_NUMBER}</p>
-        </div>
+        {process.env.MY_MAIL_ADDRESS ? (
+          <div style={contactDetailsLine}>
+            <MailIcon />
+            <p style={linkStyle}>{process.env.MY_MAIL_ADDRESS}</p>
+          </div>
+        ) : null}
+        {process.env.MY_PHONE_NUMBER ? (
+          <div style={contactDetailsLine}>
+            <CallIcon />
+            <p>{process.env.MY_PHONE_NUMBER}</p>
+          </div>
+        ) : null}
         <div style={contactDetailsLine}>
           <LocationIcon />
           <p>{data.city}</p>

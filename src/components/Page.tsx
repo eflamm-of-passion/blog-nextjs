@@ -40,7 +40,7 @@ export default function Page(props: PageProps) {
         </span>
       </button>
       <div></div>
-      <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-4xl">
+      <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-3xl">
         {props.children}
       </div>
     </main>

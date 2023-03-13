@@ -54,7 +54,7 @@ export default function About() {
       </Head>
       <Page>
         <div className="flex flex-row items-end -ml-6">
-          <div className="-mb-1 sm:mb-0">
+          <div className="-mb-1 sm:mb-0 mr-4">
             <ArrowButton
               direction="left"
               shape="square"
@@ -79,7 +79,7 @@ export default function About() {
           </Link>
         </Paragraph>
 
-        <div className="h-20" />
+        <div className="h-28" />
         <div className="fixed bottom-2 sm:bottom-5">
           <ArrowButton
             direction="left"

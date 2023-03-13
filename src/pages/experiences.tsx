@@ -41,8 +41,8 @@ export default function Experiences() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Page>
-        <div className="flex flex-row items-end -ml-6">
-          <div className="-mb-1 sm:mb-0">
+        <div className="flex flex-row items-end mt-5 sm:mt-10 -ml-6">
+          <div className="-mb-1 sm:mb-0 mr-4">
             <ArrowButton
               direction="left"
               shape="square"
@@ -52,7 +52,7 @@ export default function Experiences() {
           <PageTitle>{capitalize(t("experiences"))}</PageTitle>
         </div>
         <Paragraph align="justify">{t("introduction")}</Paragraph>
-        <div className="flex flex-row justify-around my-5">
+        <div className="flex flex-row justify-around my-5 sm:my-14">
           <Link
             href="https://github.com/eflamm-of-passion"
             target="_blank"
@@ -84,7 +84,7 @@ export default function Experiences() {
           </Link>
         </div>
         <Note align="justify">{t("contact-note")}</Note>
-        <div className="flex justify-center my-5">
+        <div className="flex justify-center my-5 sm:my-16">
           <Link className="block w-2/3" href="/api/resume" target="_blank">
             <OutlineButton>{t("download-my-resume")}</OutlineButton>
           </Link>
