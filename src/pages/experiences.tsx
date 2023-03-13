@@ -51,7 +51,7 @@ export default function Experiences() {
           </div>
           <PageTitle>{capitalize(t("experiences"))}</PageTitle>
         </div>
-        <Paragraph align="justify">{t("introduction")}</Paragraph>
+        <Paragraph className="text-justify">{t("introduction")}</Paragraph>
         <div className="flex flex-row justify-around my-5 sm:my-14">
           <Link
             href="https://github.com/eflamm-of-passion"
@@ -65,7 +65,9 @@ export default function Experiences() {
                 theme.extend.colors.primary.DEFAULT,
               ]}
             />
-            <Paragraph align="center">{t("my-github-account")}</Paragraph>
+            <Paragraph className="text-center">
+              {t("my-github-account")}
+            </Paragraph>
           </Link>
           <Link
             href="https://www.linkedin.com/in/eflamm/"
@@ -80,7 +82,9 @@ export default function Experiences() {
               ]}
               rounded
             />
-            <Paragraph align="center">{t("my-linkedin-account")}</Paragraph>
+            <Paragraph className="text-center">
+              {t("my-linkedin-account")}
+            </Paragraph>
           </Link>
         </div>
         <Note align="justify">{t("contact-note")}</Note>
