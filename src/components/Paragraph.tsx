@@ -3,25 +3,45 @@ import Text from "./Text";
 
 interface ParagraphProps {
   size?: "normal" | "big";
+  align?: "start" | "justify" | "end";
   children?: ReactNode | undefined;
   className?: string;
 }
-function Paragraph({ size, children, className }: ParagraphProps) {
-  let sizeClass = " text-sm sm:text-lg ";
+function Paragraph({
+  size = "normal",
+  align = "justify",
+  children,
+  className,
+}: ParagraphProps) {
+  let sizeClass;
   switch (size) {
     case "normal":
       sizeClass = " text-sm sm:text-lg ";
       break;
     case "big":
-      sizeClass = " text-lg sm:text-xl ";
+      sizeClass = " text-base sm:text-xl ";
+      break;
+  }
+  let alignClass;
+  switch (align) {
+    case "start":
+      alignClass = " text-start ";
+      break;
+    case "justify":
+      alignClass = " text-justify ";
+      break;
+    case "end":
+      alignClass = " text-end ";
       break;
   }
   return (
-    <Text
-      className={sizeClass + " mt-5 sm:mt-8 whitespace-pre-wrap " + className}
+    <p
+      className={
+        sizeClass + align + " mt-5 sm:mt-8 whitespace-pre-wrap " + className
+      }
     >
-      {children}
-    </Text>
+      <Text>{children}</Text>
+    </p>
   );
 }
 

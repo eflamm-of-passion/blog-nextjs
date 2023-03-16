@@ -56,7 +56,7 @@ const Introduction = ({ text }: IntroductionProps) => {
 
   return (
     <div className="w-full h-1/3 flex items-start ">
-      <Paragraph size="big">
+      <Paragraph size="big" align="start">
         {textToDisplay}
         <span
           className={

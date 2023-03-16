@@ -97,7 +97,7 @@ export default function Articles({ articles }: ArticlesProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page>
+      <Page opaqueBottomBar>
         <div className="flex flex-row items-end mt-10 -ml-6">
           <div className="-mb-1 sm:mb-0 mr-4">
             <ArrowButton

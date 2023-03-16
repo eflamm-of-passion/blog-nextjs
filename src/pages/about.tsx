@@ -52,8 +52,8 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page>
-        <div className="flex flex-row items-end -ml-6">
+      <Page opaqueBottomBar>
+        <div className="flex flex-row items-end -ml-6 ">
           <div className="-mb-1 sm:mb-0 mr-4">
             <ArrowButton
               direction="left"

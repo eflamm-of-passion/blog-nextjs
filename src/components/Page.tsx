@@ -6,8 +6,9 @@ import { LanguageRounded } from "@mui/icons-material";
 
 export interface PageProps {
   children: ReactNode | undefined;
+  opaqueBottomBar?: boolean;
 }
-export default function Page(props: PageProps) {
+export default function Page({ children, opaqueBottomBar = false }: PageProps) {
   const router = useRouter();
   const [locale, setLocale] = useState(i18n?.resolvedLanguage);
 
@@ -39,9 +40,11 @@ export default function Page(props: PageProps) {
           {locale?.toUpperCase()}
         </span>
       </button>
-      <div></div>
+      {opaqueBottomBar ? (
+        <div className="pointer-events-none w-screen h-24 bg-gradient-to-t from-black to-transparent fixed bottom-0"></div>
+      ) : null}
       <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-3xl">
-        {props.children}
+        {children}
       </div>
     </main>
   );
