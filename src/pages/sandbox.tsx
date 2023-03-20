@@ -43,7 +43,6 @@ export default function Sandbox() {
           </div>
           <PageTitle>Sandbox</PageTitle>
         </div>
-        <EmberAnimation />
         <div className="fixed bottom-10">
           <ArrowButton
             direction="left"
