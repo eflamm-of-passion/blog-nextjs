@@ -7,8 +7,8 @@ export default function EmberAnimation() {
     (1 + Math.random() * 0.5) * (Math.round(Math.random()) ? 1 : -1);
   const rangeFactorOdd = 1 + Math.random() * 0.7;
   const rangeFactorEven = 1 + Math.random() * 0.7;
-  const width = 1.2 * (1 + Math.random());
-  const height = 1.2 * (1 + Math.random());
+  const width = 1 * (1 + Math.random());
+  const height = 1 * (1 + Math.random());
 
   let color;
   switch (Math.floor(Math.random() * 3) + 1) {
@@ -76,9 +76,5 @@ export default function EmberAnimation() {
     width: ${width}rem;
     height: ${height}rem;
   `;
-  return (
-    <div className="flex flex-col justify-end items-center h-full w-full blur-sm xs:blur-lg">
-      <EmberDiv className={color + " rounded-sm "} />
-    </div>
-  );
+  return <EmberDiv className={color + " rounded-sm blur-sm xs:blur-lg "} />;
 }

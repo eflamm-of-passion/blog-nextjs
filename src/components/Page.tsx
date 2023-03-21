@@ -3,6 +3,7 @@ import { i18n } from "next-i18next";
 import { useRouter } from "next/router";
 import { LanguageRounded } from "@mui/icons-material";
 import EmberAnimation from "./EmberAnimation";
+import BrazierAnimation from "./BrazierAnimation";
 
 export interface PageProps {
   children: ReactNode | undefined;
@@ -32,7 +33,7 @@ export default function Page({ children, opaqueBottomBar = false }: PageProps) {
       }
     >
       <button
-        className="fixed top-0 right-0 p-2 rounded-md hover:bg-gray-900 z-15"
+        className="fixed top-0 right-0 p-2 rounded-md hover:bg-gray-900 z-30"
         onClick={toggleLanguage}
       >
         <span className="font-mono font-bold text-sm text-secondary whitespace-pre-wrap">
@@ -43,22 +44,22 @@ export default function Page({ children, opaqueBottomBar = false }: PageProps) {
       {opaqueBottomBar ? (
         <div className="pointer-events-none w-screen h-24 bg-gradient-to-t from-black to-transparent fixed bottom-0"></div>
       ) : null}
-      <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-3xl z-10">
+      <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-3xl z-20">
         {children}
       </div>
-      <div className="fixed bottom-0 left-0 z-5 ">
+      <div className="fixed bottom-0 left-0 z-10 ">
         <div className="w-screen flex flex-row justify-between">
           <div className="w-1/4 flex flex-row justify-between">
             <EmberAnimation />
             <EmberAnimation />
-            <EmberAnimation />
+            <BrazierAnimation className="w-1/4 h-0 fixed -bottom-28 -left-8 rotate-12" />
             <EmberAnimation />
             <EmberAnimation />
           </div>
           <div className="w-1/4 flex flex-row justify-between">
             <EmberAnimation />
             <EmberAnimation />
-            <EmberAnimation />
+            <BrazierAnimation className="w-1/4 h-0 fixed -bottom-28 -right-8 -rotate-12" />
             <EmberAnimation />
             <EmberAnimation />
           </div>
