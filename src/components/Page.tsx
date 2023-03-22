@@ -52,14 +52,14 @@ export default function Page({ children, opaqueBottomBar = false }: PageProps) {
           <div className="w-1/4 flex flex-row justify-between">
             <EmberAnimation />
             <EmberAnimation />
-            <BrazierAnimation className="w-1/4 h-0 fixed -bottom-28 -left-8 rotate-12" />
+            <BrazierAnimation className="w-1/4 h-0 absolute -bottom-24 md--bottom-28 -left-8 rotate-12" />
             <EmberAnimation />
             <EmberAnimation />
           </div>
           <div className="w-1/4 flex flex-row justify-between">
             <EmberAnimation />
             <EmberAnimation />
-            <BrazierAnimation className="w-1/4 h-0 fixed -bottom-28 -right-8 -rotate-12" />
+            <BrazierAnimation className="w-1/4 h-0 absolute -bottom-24 md--bottom-28 -right-8 -rotate-12" />
             <EmberAnimation />
             <EmberAnimation />
           </div>

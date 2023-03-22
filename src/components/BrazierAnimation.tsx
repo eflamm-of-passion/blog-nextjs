@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 
 const glowAnimation = keyframes`
     from {
-        box-shadow: 0 0 130px 35px #efff44;
+        box-shadow: 0 0 130px 80px #efff44;
     }
     to {
-        box-shadow: 0 0 160px 35px #efff44;
+        box-shadow: 0 0 160px 80px #efff44;
     }
 `;
 

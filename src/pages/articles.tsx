@@ -46,10 +46,13 @@ function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <div className="flex justify-center my-5">
-      <Link className="block w-full" href={"articles/" + article.slug}>
+      <Link
+        className="block w-full transition-transform duration-200 hover:translate-x-1"
+        href={"articles/" + article.slug}
+      >
         <div
           className={
-            "items-center justify-center my-4 p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
+            "flex flex-row items-center justify-center my-4 p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
           }
         >
           <div className="flex flex-col items-start w-full h-full p-4 bg-third hover:bg-gray-900 rounded-lg">
@@ -73,6 +76,9 @@ function ArticleCard({ article }: ArticleCardProps) {
             <div>
               <Text style="basic">{article.excerpt}</Text>
             </div>
+          </div>
+          <div className="pl-1 text-5xl text-third hover:text-gray-900">
+            {">"}
           </div>
         </div>
       </Link>
