@@ -1,10 +1,7 @@
-import ArrowButton from "@/components/ArrowButton";
 import Page from "@/components/Page";
-import PageTitle from "@/components/PageTitle";
 import Head from "next/head";
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
 import capitalize from "@/utils/capitalize";
 import Paragraph from "@/components/Paragraph";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -28,7 +25,6 @@ export async function getStaticProps({ locale }: StaticProps) {
 
 export default function Experiences() {
   const { t } = useTranslation("experiences");
-  const router = useRouter();
 
   const title = "Eflamm - " + capitalize(t("experiences"));
 
@@ -40,17 +36,7 @@ export default function Experiences() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page opaqueBottomBar>
-        <div className="flex flex-row items-end mt-5 sm:mt-10 -ml-6">
-          <div className="-mb-1 sm:mb-0 mr-4">
-            <ArrowButton
-              direction="left"
-              shape="square"
-              onClick={() => router.push("/")}
-            />
-          </div>
-          <PageTitle>{capitalize(t("experiences"))}</PageTitle>
-        </div>
+      <Page title={capitalize(t("experiences"))} opaqueBottomBar hasBackButtons>
         <Paragraph className="text-justify">{t("introduction")}</Paragraph>
         <div className="flex flex-row justify-around my-5 sm:my-14">
           <Link
@@ -89,16 +75,13 @@ export default function Experiences() {
         </div>
         <Note align="justify">{t("contact-note")}</Note>
         <div className="flex justify-center my-5 sm:mt-24">
-          <Link className="block w-2/3" href="/api/resume" target="_blank">
+          <Link
+            className="block w-2/3 transition-transform duration-200 hover:translate-y-1 "
+            href="/api/resume"
+            target="_blank"
+          >
             <OutlineButton>{t("download-my-resume")}</OutlineButton>
           </Link>
-        </div>
-        <div className="fixed bottom-10">
-          <ArrowButton
-            direction="left"
-            shape="rectangular"
-            onClick={() => router.push("/")}
-          />
         </div>
       </Page>
     </>

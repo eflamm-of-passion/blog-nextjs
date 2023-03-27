@@ -1,6 +1,5 @@
 import Page from "@/components/Page";
 import Paragraph from "@/components/Paragraph";
-import PageTitle from "@/components/PageTitle";
 import SectionTitle from "@/components/SectionTitle";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,8 +7,6 @@ import Head from "next/head";
 import Link from "next/link";
 
 import capitalize from "../utils/capitalize";
-import ArrowButton from "@/components/ArrowButton";
-import { useRouter } from "next/router";
 
 // inspirations :
 // https://kentcdodds.com/about
@@ -40,7 +37,6 @@ export async function getStaticProps({ locale }: StaticProps) {
 
 export default function About() {
   const { t } = useTranslation("about");
-  const router = useRouter();
 
   const title = "Eflamm - " + capitalize(t("about"));
 
@@ -52,17 +48,7 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page opaqueBottomBar>
-        <div className="flex flex-row items-end -ml-6 ">
-          <div className="-mb-1 sm:mb-0 mr-4">
-            <ArrowButton
-              direction="left"
-              shape="square"
-              onClick={() => router.push("/")}
-            />
-          </div>
-          <PageTitle>{capitalize(t("about"))}</PageTitle>
-        </div>
+      <Page title={capitalize(t("about"))} opaqueBottomBar hasBackButtons>
         <SectionTitle>{t("myself")}</SectionTitle>
         <Paragraph>{t("myself-p1")}</Paragraph>
         <Paragraph>{t("myself-p2")}</Paragraph>
@@ -78,15 +64,6 @@ export default function About() {
             https://github.com/eflamm-of-passion/blog-nextjs
           </Link>
         </Paragraph>
-
-        <div className="h-28" />
-        <div className="fixed bottom-2 sm:bottom-5">
-          <ArrowButton
-            direction="left"
-            shape="rectangular"
-            onClick={() => router.push("/")}
-          />
-        </div>
       </Page>
     </>
   );

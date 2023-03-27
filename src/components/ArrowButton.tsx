@@ -1,9 +1,11 @@
 interface ArrowButtonProps {
+  className?: string;
   direction?: "right" | "left" | "top" | "bottom";
   shape?: "rectangular" | "square";
   onClick: Function;
 }
 export default function ArrowButton({
+  className,
   direction,
   shape,
   onClick,
@@ -40,6 +42,8 @@ export default function ArrowButton({
     <div
       onClick={() => onClick()}
       className={
+        className +
+        " " +
         shapeContainerClasses +
         "items-center justify-center p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
       }

@@ -4,12 +4,23 @@ import { useRouter } from "next/router";
 import { LanguageRounded } from "@mui/icons-material";
 import EmberAnimation from "./EmberAnimation";
 import BrazierAnimation from "./BrazierAnimation";
+import PageTitle from "./PageTitle";
+import ArrowButton from "./ArrowButton";
 
 export interface PageProps {
+  title?: string;
   children: ReactNode | undefined;
+  backOnclick?: () => {};
+  hasBackButtons?: boolean;
   opaqueBottomBar?: boolean;
 }
-export default function Page({ children, opaqueBottomBar = false }: PageProps) {
+export default function Page({
+  title,
+  children,
+  backOnclick,
+  hasBackButtons,
+  opaqueBottomBar = false,
+}: PageProps) {
   const router = useRouter();
   const [locale, setLocale] = useState(i18n?.resolvedLanguage);
 
@@ -33,7 +44,7 @@ export default function Page({ children, opaqueBottomBar = false }: PageProps) {
       }
     >
       <button
-        className="fixed top-0 right-0 p-2 rounded-md hover:bg-gray-900 z-30"
+        className="fixed top-0 right-0 p-2 rounded-md hover:bg-gray-900 z-40"
         onClick={toggleLanguage}
       >
         <span className="font-mono font-bold text-sm text-secondary whitespace-pre-wrap">
@@ -41,12 +52,42 @@ export default function Page({ children, opaqueBottomBar = false }: PageProps) {
           {locale?.toUpperCase()}
         </span>
       </button>
-      {opaqueBottomBar ? (
-        <div className="pointer-events-none w-screen h-24 bg-gradient-to-t from-black to-transparent fixed bottom-0"></div>
-      ) : null}
+
       <div className="flex flex-col w-full pt-4 px-6 sm:px-0 lg:max-w-3xl z-20">
+        {title ? (
+          <div className="flex flex-row items-end mt-10 -ml-6">
+            {hasBackButtons ? (
+              <div className="-mb-1 sm:mb-0">
+                <ArrowButton
+                  className="transition-transform duration-200 hover:-translate-x-1"
+                  direction="left"
+                  shape="square"
+                  onClick={backOnclick ? backOnclick : () => router.back()}
+                />
+              </div>
+            ) : null}
+            <PageTitle>{title}</PageTitle>
+          </div>
+        ) : null}
         {children}
+        {hasBackButtons ? (
+          <>
+            <div className="h-32" />
+            <div className="fixed bottom-2 sm:bottom-10 z-40">
+              <ArrowButton
+                className="transition-transform duration-200 hover:-translate-x-1"
+                direction="left"
+                shape="rectangular"
+                onClick={() => router.push("/")}
+              />
+            </div>
+          </>
+        ) : null}
       </div>
+
+      {opaqueBottomBar ? (
+        <div className="pointer-events-none w-screen h-24 bg-gradient-to-t from-black to-transparent fixed bottom-0 z-30"></div>
+      ) : null}
       <div className="fixed bottom-0 left-0 z-10 ">
         <div className="w-screen flex flex-row justify-between">
           <div className="w-1/4 flex flex-row justify-between">

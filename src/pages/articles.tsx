@@ -1,14 +1,10 @@
-import ArrowButton from "@/components/ArrowButton";
 import Page from "@/components/Page";
-import PageTitle from "@/components/PageTitle";
 import capitalize from "@/utils/capitalize";
 import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import OutlineButton from "@/components/OutlineButton";
-import Paragraph from "@/components/Paragraph";
 import strapiApi from "@/lib/strapi";
 import { ArticleData } from "@/types/strapi.type";
 import Text from "@/components/Text";
@@ -103,28 +99,10 @@ export default function Articles({ articles }: ArticlesProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page opaqueBottomBar>
-        <div className="flex flex-row items-end mt-10 -ml-6">
-          <div className="-mb-1 sm:mb-0 mr-4">
-            <ArrowButton
-              direction="left"
-              shape="square"
-              onClick={() => router.push("/")}
-            />
-          </div>
-          <PageTitle>{capitalize(t("articles"))}</PageTitle>
-        </div>
+      <Page title={capitalize(t("articles"))} opaqueBottomBar hasBackButtons>
         {articles.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}
-        <div className="h-20" />
-        <div className="fixed bottom-2 sm:bottom-10">
-          <ArrowButton
-            direction="left"
-            shape="rectangular"
-            onClick={() => router.push("/")}
-          />
-        </div>
       </Page>
     </>
   );

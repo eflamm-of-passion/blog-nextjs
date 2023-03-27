@@ -5,8 +5,6 @@ import strapiApi from "@/lib/strapi";
 import { ArticleData } from "@/types/strapi.type";
 import Head from "next/head";
 import Page from "@/components/Page";
-import ArrowButton from "@/components/ArrowButton";
-import PageTitle from "@/components/PageTitle";
 import Paragraph from "@/components/Paragraph";
 
 export async function getStaticPaths(context: GetStaticProps) {
@@ -52,29 +50,16 @@ export default function Article({ article }: ArticleProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page opaqueBottomBar>
-        <div className="flex flex-row items-end -ml-6">
-          <div className="-mb-1 sm:mb-0">
-            <ArrowButton
-              direction="left"
-              shape="square"
-              onClick={() => router.push("/articles")}
-            />
-          </div>
-          <PageTitle>{article.title}</PageTitle>
-        </div>
+      <Page
+        title={article.title}
+        backOnclick={() => router.push("/articles")}
+        opaqueBottomBar
+        hasBackButtons
+      >
         <div className="text-primary">
           {processedContent.map((paragraph, index) => (
             <Paragraph key={index}>{paragraph}</Paragraph>
           ))}
-        </div>
-        <div className="h-32" />
-        <div className="fixed bottom-2 sm:bottom-10">
-          <ArrowButton
-            direction="left"
-            shape="rectangular"
-            onClick={() => router.push("/")}
-          />
         </div>
       </Page>
     </>

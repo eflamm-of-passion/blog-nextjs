@@ -1,11 +1,10 @@
 import ArrowButton from "@/components/ArrowButton";
 import Page from "@/components/Page";
-import PageTitle from "@/components/PageTitle";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import EmberAnimation from "@/components/EmberAnimation";
+import capitalize from "@/utils/capitalize";
 
 interface StaticProps {
   locale: string;
@@ -32,24 +31,8 @@ export default function Sandbox() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Page>
-        <div className="flex flex-row items-end mt-5 sm:mt-10 -ml-6">
-          <div className="-mb-1 sm:mb-0 mr-4">
-            <ArrowButton
-              direction="left"
-              shape="square"
-              onClick={() => router.push("/")}
-            />
-          </div>
-          <PageTitle>Sandbox</PageTitle>
-        </div>
-        <div className="fixed bottom-10">
-          <ArrowButton
-            direction="left"
-            shape="rectangular"
-            onClick={() => router.push("/")}
-          />
-        </div>
+      <Page title={capitalize("Sandbox")} hasBackButtons>
+        <div>Nothing to see here for the moment</div>
       </Page>
     </>
   );
