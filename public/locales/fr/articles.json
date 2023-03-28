@@ -2,5 +2,6 @@
   "articles": "articles",
   "updated-on": "mis à jour le ",
   "time-to-read": "temps de lecture",
-  "minutes-abbreviation": "mn"
+  "minutes-abbreviation": "mn",
+  "meta-description": "Vous pouvez retrouver des articles techniques que j'ai écrit ici."
 }
