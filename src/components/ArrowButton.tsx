@@ -3,12 +3,14 @@ interface ArrowButtonProps {
   direction?: "right" | "left" | "top" | "bottom";
   shape?: "rectangular" | "square";
   onClick: Function;
+  borderLess?: boolean;
 }
 export default function ArrowButton({
   className,
   direction,
   shape,
   onClick,
+  borderLess = false,
 }: ArrowButtonProps) {
   let arrow = "right";
   switch (direction) {
@@ -45,11 +47,23 @@ export default function ArrowButton({
         className +
         " " +
         shapeContainerClasses +
-        "items-center justify-center p-1 rounded-xl border-2 bg-gradient-to-br from-primary to-primaryGradient cursor-pointer"
+        `items-center justify-center p-1 rounded-xl cursor-pointer select-none ${
+          !borderLess
+            ? "border-2 bg-gradient-to-br from-primary to-primaryGradient"
+            : null
+        }`
       }
     >
-      <div className="flex items-center justify-center w-full h-full bg-third hover:bg-gray-900 rounded-lg">
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient">
+      <div
+        className={`flex items-center justify-center w-full h-full ${
+          !borderLess ? "bg-third hover:bg-gray-900 rounded-lg" : null
+        }`}
+      >
+        <span
+          className={
+            "text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient"
+          }
+        >
           {arrow}
         </span>
       </div>
