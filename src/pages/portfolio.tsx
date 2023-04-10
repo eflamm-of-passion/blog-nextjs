@@ -6,7 +6,6 @@ import Page from "@/components/Page";
 import Text from "@/components/Text";
 import Image from "next/image";
 import { useState } from "react";
-import { isTemplateSpan } from "typescript";
 import ArrowButton from "@/components/ArrowButton";
 
 interface StaticProps {
@@ -28,6 +27,54 @@ const previous: (index: number, maxIndex: number) => number = (
 const next: (index: number, maxIndex: number) => number = (index, maxIndex) =>
   index === maxIndex ? 0 : index + 1;
 
+interface CarouselItemProps {
+  previousAnimation: boolean;
+  nextAnimation: boolean;
+  baseClassName: string;
+  previousClassName?: string;
+  nextClassName?: string;
+  picturePaths: PicturePaths;
+  pictureClassName?: string;
+}
+function CarouselItem({
+  previousAnimation,
+  nextAnimation,
+  baseClassName,
+  previousClassName,
+  nextClassName,
+  picturePaths,
+  pictureClassName,
+}: CarouselItemProps) {
+  return (
+    <div
+      className={` absolute w-full ${
+        !previousAnimation && !nextAnimation ? baseClassName : " "
+      }
+${
+  previousAnimation && previousClassName
+    ? ` transition duration-1000 ease-in-out transform ${previousClassName}`
+    : " "
+}
+${
+  nextAnimation && nextClassName
+    ? ` transition duration-1000 ease-in-out transform ${nextClassName}`
+    : " "
+}`}
+    >
+      <picture>
+        <source srcSet={picturePaths.png} />
+        <Image
+          src={picturePaths.webp}
+          alt=""
+          width={1200}
+          height={1200}
+          className={"rounded-sm " + pictureClassName}
+        />
+      </picture>
+    </div>
+  );
+}
+
 interface CarouselProps {
   items: CarouselItem[];
 }
@@ -37,78 +84,127 @@ interface CarouselItem {
   previous: PicturePaths;
 }
 function Carousel({ items }: CarouselProps) {
-  // TODO reduce the size of the size pictures
-  // TODO animation to right : small to big picture, big to small picture
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previousAnimation, setPreviousAnimation] = useState(false);
+  const [nextAnimation, setNextAnimation] = useState(false);
 
   return (
     <>
       {items && items.length ? (
-        <div className="w-full flex flex-row justify-around items-center">
-          <ArrowButton
-            className="transition-transform duration-200 hover:-translate-x-1"
-            direction="left"
-            shape="square"
-            onClick={() =>
-              setCurrentIndex(previous(currentIndex, items.length - 1))
-            }
-            borderLess
-          />
-
-          <div className="w-40">
-            <picture>
-              <source
-                srcSet={
-                  items[previous(currentIndex, items.length - 1)].current.png
-                }
-              />
-              <Image
-                src={items[currentIndex].current.webp}
-                alt=""
-                width={1200}
-                height={1200}
-                className="rounded-sm"
-              />
-            </picture>
+        <div className="relative w-full flex items-center mt-10 ">
+          <div className="absolute w-full translate-x-0 z-30">
+            <ArrowButton
+              className="transition-transform duration-200 hover:-translate-x-1 relative"
+              direction="left"
+              shape="square"
+              onClick={() => {
+                setPreviousAnimation(true);
+                setTimeout(() => {
+                  setCurrentIndex(previous(currentIndex, items.length - 1));
+                  setPreviousAnimation(false);
+                }, 1000);
+              }}
+              borderLess
+            />
           </div>
 
-          <div className="w-44">
-            <picture>
-              <source srcSet={items[currentIndex].current.png} />
-              <Image
-                src={items[currentIndex].current.webp}
-                alt=""
-                width={1200}
-                height={1200}
-                className="rounded-sm"
-              />
-            </picture>
-          </div>
+          <div className=" relative w-2/3 flex items-center">
+            <div className=" opacity-0">
+              <picture>
+                <source srcSet={items[currentIndex].current.png} />
+                <Image
+                  src={items[currentIndex].current.webp}
+                  alt=""
+                  width={1200}
+                  height={1200}
+                  className={"rounded-sm w-32 sm:w-44 "}
+                />
+              </picture>
+            </div>
 
-          <div className="w-40">
-            <picture>
-              <source
-                srcSet={items[next(currentIndex, items.length - 1)].current.png}
-              />
-              <Image
-                src={items[currentIndex].current.webp}
-                alt=""
-                width={1200}
-                height={1200}
-                className="rounded-sm"
-              />
-            </picture>
-          </div>
+            {/* -2 */}
+            <CarouselItem
+              previousAnimation={previousAnimation}
+              nextAnimation={nextAnimation}
+              baseClassName="-translate-x-1/2 opacity-0 filter grayscale"
+              previousClassName="translate-x-0 opacity-100 filter grayscale"
+              nextClassName="opacity-0"
+              pictureClassName="w-32 sm:w-44"
+              picturePaths={
+                items[
+                  previous(
+                    previous(currentIndex, items.length - 1),
+                    items.length - 1
+                  )
+                ].current
+              }
+            />
 
-          <ArrowButton
-            className="transition-transform duration-200 hover:translate-x-1"
-            direction="right"
-            shape="square"
-            onClick={() =>
-              setCurrentIndex(next(currentIndex, items.length - 1))
-            }
-            borderLess
-          />
+            {/* -1 */}
+            <CarouselItem
+              previousAnimation={previousAnimation}
+              nextAnimation={nextAnimation}
+              baseClassName="translate-x-0 z-10 opacity-100 filter grayscale"
+              previousClassName="translate-x-1/2 z-20 opacity-100"
+              nextClassName="-translate-x-[50%] opacity-0  filter grayscale"
+              pictureClassName="w-32 sm:w-44"
+              picturePaths={
+                items[previous(currentIndex, items.length - 1)].current
+              }
+            />
+
+            {/* 0 */}
+            <CarouselItem
+              previousAnimation={previousAnimation}
+              nextAnimation={nextAnimation}
+              baseClassName="translate-x-1/2 z-20 "
+              previousClassName="translate-x-full z-10 opacity-100 filter grayscale"
+              nextClassName="translate-x-0 z-10 opacity-100 filter grayscale"
+              pictureClassName="w-32 sm:w-44"
+              picturePaths={items[currentIndex].current}
+            />
+
+            {/* +1 */}
+            <CarouselItem
+              previousAnimation={previousAnimation}
+              nextAnimation={nextAnimation}
+              baseClassName="translate-x-full z-10 opacity-100 filter grayscale"
+              previousClassName="translate-x-[150%] opacity-0 filter grayscale"
+              nextClassName="translate-x-1/2 z-20"
+              pictureClassName="w-32 sm:w-44"
+              picturePaths={items[next(currentIndex, items.length - 1)].current}
+            />
+
+            {/* +2 */}
+            <CarouselItem
+              previousAnimation={previousAnimation}
+              nextAnimation={nextAnimation}
+              baseClassName="translate-x-[150%] opacity-0 filter grayscale"
+              nextClassName="translate-x-full z-10 opacity-100 filter grayscale"
+              previousClassName="opacity-0 filter grayscale"
+              pictureClassName="w-32 sm:w-44"
+              picturePaths={
+                items[
+                  next(next(currentIndex, items.length - 1), items.length - 1)
+                ].current
+              }
+            />
+          </div>
+          <div className="absolute w-full translate-x-[81%] z-30 ">
+            <ArrowButton
+              className="transition-transform duration-200 hover:translate-x-1"
+              direction="right"
+              shape="square"
+              onClick={() => {
+                setNextAnimation(true);
+                setTimeout(() => {
+                  setCurrentIndex(next(currentIndex, items.length - 1));
+                  setNextAnimation(false);
+                }, 1000);
+              }}
+              borderLess
+            />
+          </div>
         </div>
       ) : null}
     </>
@@ -121,7 +217,7 @@ interface DescriptionProps {
 }
 function Description({ title, description }: DescriptionProps) {
   return (
-    <div>
+    <div className="mt-5">
       <h3>
         <Text style="highlight" className="text-4xl">
           {title}

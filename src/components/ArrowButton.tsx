@@ -50,7 +50,7 @@ export default function ArrowButton({
         `items-center justify-center p-1 rounded-xl cursor-pointer select-none ${
           !borderLess
             ? "border-2 bg-gradient-to-br from-primary to-primaryGradient"
-            : null
+            : " "
         }`
       }
     >
