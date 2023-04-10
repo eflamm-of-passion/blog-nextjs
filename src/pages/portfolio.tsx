@@ -7,6 +7,10 @@ import Text from "@/components/Text";
 import Image from "next/image";
 import { useState } from "react";
 import ArrowButton from "@/components/ArrowButton";
+import Link from "next/link";
+import { GithubIcon } from "@/components/icons/GithubIcon";
+import { theme } from "tailwind.config";
+import { PlayStoreIcon } from "@/components/icons/PlayStoreIcon";
 
 interface StaticProps {
   locale: string;
@@ -97,6 +101,7 @@ function Carousel({ items }: CarouselProps) {
               className="transition-transform duration-200 hover:-translate-x-1 relative"
               direction="left"
               shape="square"
+              size="big"
               onClick={() => {
                 setPreviousAnimation(true);
                 setTimeout(() => {
@@ -195,6 +200,7 @@ function Carousel({ items }: CarouselProps) {
               className="transition-transform duration-200 hover:translate-x-1"
               direction="right"
               shape="square"
+              size="big"
               onClick={() => {
                 setNextAnimation(true);
                 setTimeout(() => {
@@ -247,6 +253,34 @@ function PortfolioProject({ project }: PortfolioProjectProps) {
     <div>
       <Carousel items={generateCarouselItems(project.screenshots)} />
       <Description title={project.title} description={project.description} />
+      <div className="flex flex-row justify-around w-48">
+        <Link
+          href="https://github.com/eflamm-of-passion/notlelo"
+          target="_blank"
+          className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
+        >
+          <GithubIcon
+            size={48}
+            colors={[
+              theme.extend.colors.primaryGradient.DEFAULT,
+              theme.extend.colors.primary.DEFAULT,
+            ]}
+          />
+        </Link>
+        <Link
+          href="https://play.google.com/store/apps/details?id=dev.eflamm.notlelo"
+          target="_blank"
+          className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
+        >
+          <PlayStoreIcon
+            size={48}
+            colors={[
+              theme.extend.colors.primaryGradient.DEFAULT,
+              theme.extend.colors.primary.DEFAULT,
+            ]}
+          />
+        </Link>
+      </div>
     </div>
   );
 }
