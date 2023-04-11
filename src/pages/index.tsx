@@ -27,14 +27,14 @@ interface MainTitleProps {
 const MainTitle = ({ title }: MainTitleProps) => {
   return (
     <div className="w-full flex items-center justify-center flex-col h-1/3 sm:h-1/2">
-      <p
+      <h1
         className={
           styles.mainTitleFont +
           " font-bold px-4 lg:px-24 rounded-xl lg:rounded-3xl text-8xl sm:text-sizeable lg:text-sizeable xl:text-sizeable tracking-widest text-black bg-gradient-to-br from-primary to-primaryGradient shadow-secondary/50"
         }
       >
         {title.toUpperCase()}
-      </p>
+      </h1>
     </div>
   );
 };

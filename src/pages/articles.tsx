@@ -44,6 +44,7 @@ function ArticleCard({ article }: ArticleCardProps) {
       <Link
         className="block w-full transition-transform duration-200 hover:translate-x-1"
         href={"articles/" + article.slug}
+        passHref
       >
         <div
           className={

@@ -42,6 +42,7 @@ export default function ServerError500() {
           <Link
             className="block w-3/4 sm:w-1/2 mt-10 transition-transform duration-200 hover:translate-y-1 "
             href="/"
+            passHref
           >
             <OutlineButton>{t("500-button-label")}</OutlineButton>
           </Link>

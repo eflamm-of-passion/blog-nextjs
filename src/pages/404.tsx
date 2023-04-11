@@ -42,6 +42,7 @@ export default function PageNotFound404() {
           <Link
             className="block w-3/4 sm:w-1/2 mt-10 transition-transform duration-200 hover:translate-y-1 "
             href="/"
+            passHref
           >
             <OutlineButton>{t("404-button-label")}</OutlineButton>
           </Link>

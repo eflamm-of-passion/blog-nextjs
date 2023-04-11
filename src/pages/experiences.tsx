@@ -44,6 +44,7 @@ export default function Experiences() {
           <Link
             href="https://github.com/eflamm-of-passion"
             target="_blank"
+            passHref
             className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
           >
             <GithubIcon
@@ -60,6 +61,7 @@ export default function Experiences() {
           <Link
             href="https://www.linkedin.com/in/eflamm/"
             target="_blank"
+            passHref
             className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
           >
             <LinkedinIcon
@@ -81,6 +83,7 @@ export default function Experiences() {
             className="block w-2/3 transition-transform duration-200 hover:translate-y-1 "
             href="/api/resume"
             target="_blank"
+            passHref
           >
             <OutlineButton>{t("download-my-resume")}</OutlineButton>
           </Link>

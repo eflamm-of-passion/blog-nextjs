@@ -257,6 +257,7 @@ function PortfolioProject({ project }: PortfolioProjectProps) {
         <Link
           href="https://github.com/eflamm-of-passion/notlelo"
           target="_blank"
+          passHref
           className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
         >
           <GithubIcon
@@ -270,6 +271,7 @@ function PortfolioProject({ project }: PortfolioProjectProps) {
         <Link
           href="https://play.google.com/store/apps/details?id=dev.eflamm.notlelo"
           target="_blank"
+          passHref
           className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-900"
         >
           <PlayStoreIcon
