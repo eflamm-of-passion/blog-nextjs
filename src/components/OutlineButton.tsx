@@ -16,7 +16,7 @@ export default function OutlineButton({
       }
     >
       <div className="flex items-center justify-center w-full h-full p-2 bg-third hover:bg-gray-900 rounded-lg">
-        <span className="text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient">
+        <span className="text-lg sm:text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-br from-primary to-primaryGradient">
           {label}
         </span>
       </div>

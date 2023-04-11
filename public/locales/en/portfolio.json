@@ -1,4 +1,9 @@
 {
   "portfolio": "portfolio",
-  "meta-description": "Here some projects I worked on."
+  "meta-description": "Here some projects I worked on.",
+  "notlelo-title": "Notlelo",
+  "notlelo-description": "At scout camps we are asked to record the batch numbers of all the food we eat. This is a very repetitive and time-consuming task, which is what led me to develop the Notlelo application on Android. Originally developed with React Native, I then developed it with Android Compose.",
+  "notlelo-screenshot-alt-1": "Home page of the Notlelo application",
+  "notlelo-screenshot-alt-2": "Library screen to view all registered products",
+  "notlelo-screenshot-alt-3": "Add a product screen"
 }

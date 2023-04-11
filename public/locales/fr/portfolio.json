@@ -2,5 +2,8 @@
   "portfolio": "portfolio",
   "meta-description": "Voici quelques projets sur lesquels j'ai travaillé.",
   "notlelo-title": "Notlelo",
-  "notlelo-description": "Lors des camps scouts il nous est demandé de noter les numéros de lots de l'ensemble des aliments que nous consommons. Il s'agit d'une tâche très répétitive et chronophage, c'est ce qui m'a amené à développer l'application Notlelo sur Android. A la base développée avec React Native, je l'ai ensuite développée avec Android Compose."
+  "notlelo-description": "Lors des camps scouts il nous est demandé de noter les numéros de lots de l'ensemble des aliments que nous consommons. Il s'agit d'une tâche très répétitive et chronophage, c'est ce qui m'a amené à développer l'application Notlelo sur Android. A la base développée avec React Native, je l'ai ensuite développée avec Android Compose.",
+  "notlelo-screenshot-alt-1": "Page d'accueil de l'application Notlelo",
+  "notlelo-screenshot-alt-2": "Ecran de librairie pour visualiser tous les produits enregistrés",
+  "notlelo-screenshot-alt-3": "Ecran d'ajout d'un produit"
 }

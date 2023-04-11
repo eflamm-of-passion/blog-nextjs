@@ -1,0 +1,6 @@
+{
+  "500-error": "erreur 500",
+  "500-meta-description": "Une erreur est survenue sur le serveur.",
+  "500-message": "Une erreur est survenue sur le serveur. Veuillez contacter Eflamm pour lui indiquer le problème.",
+  "500-button-label": "Revenir à la page d'accueil"
+}

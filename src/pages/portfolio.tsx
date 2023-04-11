@@ -66,13 +66,14 @@ ${
 }`}
     >
       <picture>
-        <source srcSet={picturePaths.png} />
+        <source srcSet={picturePaths.webp} type="image/webp" />
+        <source srcSet={picturePaths.png} type="image/png" />
         <Image
-          src={picturePaths.webp}
-          alt=""
+          src={picturePaths.png ?? picturePaths.webp}
+          alt={picturePaths.alt ?? ""}
           width={1200}
           height={1200}
-          className={"rounded-sm " + pictureClassName}
+          className={"rounded-md " + pictureClassName}
         />
       </picture>
     </div>
@@ -238,7 +239,6 @@ interface PortfolioProjectProps {
   project: PortfolioProjectData;
 }
 function PortfolioProject({ project }: PortfolioProjectProps) {
-  // TODO display the buttons to redirect to
   const generateCarouselItems: (
     picturePaths: PicturePaths[]
   ) => CarouselItem[] = (picturePaths) =>
@@ -309,17 +309,17 @@ export default function Portfolio() {
       {
         webp: "/images/portfolio/notlelo-1.webp",
         png: "/images/portfolio/notlelo-1.png",
-        alt: "",
+        alt: `${t("notlelo-screenshot-alt-1")}`,
       },
       {
         webp: "/images/portfolio/notlelo-2.webp",
         png: "/images/portfolio/notlelo-2.png",
-        alt: "",
+        alt: `${t("notlelo-screenshot-alt-2")}`,
       },
       {
         webp: "/images/portfolio/notlelo-3.webp",
         png: "/images/portfolio/notlelo-3.png",
-        alt: "",
+        alt: `${t("notlelo-screenshot-alt-3")}`,
       },
     ],
   };
